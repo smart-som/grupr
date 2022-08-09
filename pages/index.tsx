@@ -35,7 +35,7 @@ const Home: NextPage = () => {
         <p className="mt-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
           Reference site about Lorem Ipsum, giving information on its origins,
           as well as a random Lipsum generator.
-          <div className="w-9 h-9  rounded-full absolute left-0 md:-bottom-24 -bottom-10 ">
+          <div className="w-9 h-9 rotate-90 rounded-full absolute left-0 md:-bottom-32 -bottom-10 ">
             <Image
               src={link}
               alt="Chart"
