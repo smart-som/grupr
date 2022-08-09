@@ -8,7 +8,7 @@ function Grupr() {
           type="text"
           required
           placeholder="Title"
-          className="px-2 py-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
+          className="p-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
         />
       </div>
       <div className="w-full md:w-[25%] p-2 order-1 md:order-none">
@@ -22,7 +22,7 @@ function Grupr() {
 
       <div className="w-full p-2 order-3 md:order-none">
         <textarea
-          className="px-2 py-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
+          className="p-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
           placeholder={
             "https://www.androidpill.com/\nhttps://dribbble.com/\nhttps://www.activision.com/"
           }
