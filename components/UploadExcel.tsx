@@ -20,7 +20,11 @@ function UploadExcel({ title }: UploadExcelProps) {
       <h4 className="text-md font-bold text-zinc-800">
         Drag and drop files, <span className="text-purple-400">or Browse</span>
       </h4>
-      <input type="file" className="absolute inset-0 opacity-0 cursor-pointer" />
+      <input
+        type="file"
+        required
+        className="absolute inset-0 opacity-0 cursor-pointer"
+      />
     </div>
   );
 }
