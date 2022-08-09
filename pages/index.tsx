@@ -27,7 +27,7 @@ const Home: NextPage = () => {
       </Head>
 
       <section className="relative w-full ">
-        <h1 className="text-5xl font-bold text-purple-400 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold text-purple-400 text-center">
           Shorten <span className="text-orange-500">multiple links</span>, share
           as one.
         </h1>
