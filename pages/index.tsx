@@ -9,10 +9,10 @@ import links from "../images/links.png";
 // import chains from "../images/chains.png";
 // import VulcanSalute from "../images/Vulcan-salute.png";
 import Grupr from "../components/Grupr";
-import frame1 from "../images/frame (1).png";
-import frame2 from "../images/frame (2).png";
-import frame3 from "../images/frame (3).png";
-import frame4 from "../images/frame (4).png";
+import frame1 from "../images/frame (1).svg";
+import frame2 from "../images/frame (2).svg";
+import frame3 from "../images/frame (3).svg";
+import frame4 from "../images/frame (4).svg";
 import Excel from "../images/Excel.png";
 import groupLinks from "../images/groupLinks.png";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
@@ -105,7 +105,7 @@ const Home: NextPage = () => {
       </section>
 
       <section className="py-8  mt-32" id="features">
-        <h1 className="text-4xl md:text-5xl font-bold text-purple-400 text-center">
+        <h1 className="text-4xl md:text-5xl mb-8 font-bold text-purple-400 text-center">
           Amazing Features
         </h1>
         {/* frame 1 */}
