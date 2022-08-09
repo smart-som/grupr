@@ -12,6 +12,7 @@ import frame1 from "../images/frame (1).png";
 import frame2 from "../images/frame (2).png";
 import frame3 from "../images/frame (3).png";
 import frame4 from "../images/frame (4).png";
+import Excel from "../images/Excel.png";
 const Home: NextPage = () => {
   return (
     // <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -98,7 +99,7 @@ const Home: NextPage = () => {
         {/************ decor images ************/}
       </section>
 
-      <section className="py-10  mt-32">
+      <section className="py-8  mt-18">
         {/* frame 1 */}
         <div className="w-full  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
@@ -129,8 +130,7 @@ const Home: NextPage = () => {
         <div className="w-full  flex lg:flex-row-reverse flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
             <h2 className="text-3xl font-bold text-purple-400">
-              One short link,
-              <span className="text-orange-500">Infinite possibilities.</span>
+              Multiple preview layouts
             </h2>
             <p className="mt-5 font-light text-center lg:mb-0 mb-10">
               Reference site about Lorem Ipsum, giving information on its
@@ -153,9 +153,18 @@ const Home: NextPage = () => {
         {/* frame 3 */}
         <div className="w-full  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
+            <div className="w-12 h-12 mb-5 text-center  rounded-full relative ">
+              <Image
+                src={Excel}
+                alt="link"
+                className="  h-full w-full "
+                layout="fill"
+                priority
+                loading="eager"
+              />
+            </div>
             <h2 className="text-3xl font-bold text-purple-400">
-              One short link,
-              <span className="text-orange-500">Infinite possibilities.</span>
+              Import CSV support
             </h2>
             <p className="mt-5 font-light text-center lg:mb-0 mb-10">
               Reference site about Lorem Ipsum, giving information on its
@@ -180,8 +189,7 @@ const Home: NextPage = () => {
         <div className="w-full lg:flex-row-reverse  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
             <h2 className="text-3xl font-bold text-purple-400">
-              One short link,
-              <span className="text-orange-500">Infinite possibilities.</span>
+              Simple and Short URL
             </h2>
             <p className="mt-5 font-light text-center lg:mb-0 mb-10">
               Reference site about Lorem Ipsum, giving information on its
