@@ -2,7 +2,7 @@ import React from "react";
 
 function Grupr() {
   return (
-    <form className="shadow-md rounded-lg p-2 bg-white flex flex-wrap max-w-xl mt-10 mx-auto">
+    <form className="shadow-md rounded-lg p-2 bg-white flex flex-wrap max-w-xl mt-10 mx-auto border-purple-200/5 border-2">
       <div className="w-full md:w-[75%] p-2 order-2 md:order-none">
         <input
           type="text"
