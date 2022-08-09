@@ -13,6 +13,10 @@ import frame2 from "../images/frame (2).png";
 import frame3 from "../images/frame (3).png";
 import frame4 from "../images/frame (4).png";
 import Excel from "../images/Excel.png";
+import groupLinks from "../images/groupLinks.png";
+import { BsFillGrid1X2Fill } from "react-icons/bs";
+import { FaThList } from "react-icons/fa";
+
 const Home: NextPage = () => {
   return (
     // <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -99,10 +103,20 @@ const Home: NextPage = () => {
         {/************ decor images ************/}
       </section>
 
-      <section className="py-8  mt-18">
+      <section className="py-8  mt-28">
         {/* frame 1 */}
         <div className="w-full  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
+            <div className="w-24 h-24 mb-5 text-center  rounded-full relative ">
+              <Image
+                src={groupLinks}
+                alt="link"
+                className="  h-full w-full "
+                layout="fill"
+                priority
+                loading="eager"
+              />
+            </div>
             <h2 className="text-3xl font-bold text-purple-400">
               One short link,
               <span className="text-orange-500">Infinite possibilities.</span>
@@ -129,6 +143,10 @@ const Home: NextPage = () => {
 
         <div className="w-full  flex lg:flex-row-reverse flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
+            <div className="text-4xl mb-5 flex gap-x-3">
+              <FaThList className="text-purple-400 transform -rotate-[20deg]" />
+              <BsFillGrid1X2Fill className="text-orange-500 transform rotate-[20deg]" />
+            </div>
             <h2 className="text-3xl font-bold text-purple-400">
               Multiple preview layouts
             </h2>
@@ -188,6 +206,11 @@ const Home: NextPage = () => {
 
         <div className="w-full lg:flex-row-reverse  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
+            <p className="mb-5">
+              <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500">
+                https://grupr.nl/short
+              </h2>
+            </p>
             <h2 className="text-3xl font-bold text-purple-400">
               Simple and Short URL
             </h2>
