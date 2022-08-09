@@ -16,7 +16,7 @@ function Navbar() {
     },
     {
       title: "Features",
-      path: "/features",
+      path: "#features",
     },
     {
       title: "Api",

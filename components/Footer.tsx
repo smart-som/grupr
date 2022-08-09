@@ -1,8 +1,8 @@
 import React from "react";
-
+import { BsHeartFill } from "react-icons/bs";
 function Footer() {
   return (
-    <footer className="w-full  border-top border-top-2 mt-16">
+    <footer className="w-full  border-top border-top-2  md:mt-10">
       <section className="max-w-5xl mx-auto p-3 ">
         <h2 className="text-3xl font-bold text-purple-400 text-center">
           Subscribe to our Newsletter
@@ -26,6 +26,17 @@ function Footer() {
             Subscribe
           </button>
         </form>
+      </section>
+      <section className="py-5 px-3  border-t ">
+        <p className="text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
+          Made With <BsHeartFill className="text-red-600/70 inline" /> by{" "}
+          <a
+            href="https://github.com/chinnaji"
+            className="text-purple-400 font-semibold"
+          >
+            Chinnaji
+          </a>
+        </p>
       </section>
     </footer>
   );
