@@ -3,10 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Chart from "../images/Chart.png";
 import crossedFingers from "../images/Crossed-fingers.png";
-import VictoryHand from "../images/Victory-hand.png";
+// import VictoryHand from "../images/Victory-hand.png";
 import link from "../images/link.png";
 import links from "../images/links.png";
-import VulcanSalute from "../images/Vulcan-salute.png";
+// import chains from "../images/chains.png";
+// import VulcanSalute from "../images/Vulcan-salute.png";
 import Grupr from "../components/Grupr";
 import frame1 from "../images/frame (1).png";
 import frame2 from "../images/frame (2).png";
@@ -36,7 +37,7 @@ const Home: NextPage = () => {
           as well as a random Lipsum generator.
           <div className="w-9 h-9  rounded-full absolute left-0 md:-bottom-24 -bottom-10 ">
             <Image
-              src={VulcanSalute}
+              src={link}
               alt="Chart"
               className="absolute  h-full w-full "
               layout="fill"
@@ -69,7 +70,7 @@ const Home: NextPage = () => {
             loading="eager"
           />
         </div>
-        <div className="w-9 h-9  rounded-full absolute left-28 -bottom-20 ">
+        {/* <div className="w-9 h-9  rounded-full absolute left-28 -bottom-20 ">
           <Image
             src={link}
             alt="link"
@@ -78,7 +79,7 @@ const Home: NextPage = () => {
             priority
             loading="eager"
           />
-        </div>
+        </div> */}
         {/* <div className="w-9 h-9  rounded-full absolute right-0 -bottom-64 ">
           <Image
             src={VictoryHand}
