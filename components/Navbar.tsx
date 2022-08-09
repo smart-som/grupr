@@ -74,8 +74,8 @@ function Navbar() {
 
           <div className="flex items-center ml-3">
             {/* {router.pathname === "/tickets" ? null : ( */}
-            <button className="hover:bg-purpe-600 ease-in-out duration-300 bg-purple-500  lg:px-3 px-2 py-2 rounded text-sm font-semibold text-zinc-50">
-              <Link href="/tickets">Buy Tickets</Link>
+            <button className="hover:bg-purpe-500 ease-in-out duration-300 bg-purple-400  lg:px-3 px-2 py-2 rounded text-sm font-semibold text-zinc-50">
+              <Link href="/signup">Sign Up</Link>
             </button>
             {/* )} */}
 
