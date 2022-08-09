@@ -7,7 +7,7 @@ function Grupr() {
         <input
           type="text"
           required
-          placeholder="Title (optional)"
+          placeholder="Title"
           className="px-2 py-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
         />
       </div>
