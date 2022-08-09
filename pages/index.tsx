@@ -104,12 +104,12 @@ const Home: NextPage = () => {
         {/************ decor images ************/}
       </section>
 
-      <section className="py-8  mt-32" id="features">
-        <h1 className="text-4xl md:text-5xl mb-8 font-bold text-purple-400 text-center">
+      <section className="py-8  mt-10 lg:mt-32" id="features">
+        {/* <h1 className="text-4xl md:text-5xl  font-bold text-purple-400 text-center">
           Amazing Features
-        </h1>
+        </h1> */}
         {/* frame 1 */}
-        <div className="w-full  flex flex-wrap my-20 py-10">
+        <div className="w-full  flex flex-wrap my-10 py-5">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
             <div className="w-24 h-24 mb-5 text-center  rounded-full relative ">
               <Image
