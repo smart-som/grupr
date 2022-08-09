@@ -142,7 +142,7 @@ const Home: NextPage = () => {
 
         {/* frame 2*/}
 
-        <div className="w-full  flex lg:flex-row-reverse flex-wrap my-20 py-10">
+        <div className="w-full  flex md:flex-row-reverse flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
             <div className="text-4xl mb-5 flex gap-x-3">
               <FaThList className="text-purple-400 transform -rotate-[20deg]" />
@@ -205,7 +205,7 @@ const Home: NextPage = () => {
 
         {/* frame 4 */}
 
-        <div className="w-full lg:flex-row-reverse  flex flex-wrap my-20 py-10">
+        <div className="w-full md:flex-row-reverse  flex flex-wrap my-20 py-10">
           <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
             <p className="mb-5">
               <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500">
