@@ -3,7 +3,7 @@ import UploadExcel from "./UploadExcel";
 import Modal from "../components/Modal";
 import Image from "next/image";
 import party from "../images/party.png";
-import { FiExternalLink, FiClipboard } from "react-icons/fi";
+import { FiExternalLink } from "react-icons/fi";
 import axios from "axios";
 import {
   BsFacebook,
@@ -12,6 +12,7 @@ import {
   BsWhatsapp,
   BsTelegram,
 } from "react-icons/bs";
+import CopyToClipboard from "./CopyToClipboard";
 function Grupr() {
   const [isExcel, setisExcel] = useState(false);
   const [isModal, setIsModal] = useState(false);
@@ -126,12 +127,7 @@ function Grupr() {
             </div>
             <div className="flex flex-wrap -mt-2">
               <div className="w-full p-2  md:w-1/2">
-                <button
-                  type="button"
-                  className="px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
-                >
-                  <FiClipboard className="text-xl" /> Copy
-                </button>
+                <CopyToClipboard text={grupUrl} />
               </div>
               <div className="w-full p-2 md:w-1/2">
                 <a
