@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-// function Grid() {
-function Grid({ title, url, image }: any) {
+import { TLayoutProps } from "../types";
+function Grid({ title, url, image }: TLayoutProps) {
   return (
     <div className=" bg-zinc-100  rounded-lg p-0">
       <div className="w-full lg:h-44 h-36 relative rounded-t-lg overflow-hidden  p-0">

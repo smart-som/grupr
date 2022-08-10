@@ -1,6 +1,8 @@
 import React from "react";
 import Image from "next/image";
-function List({ title, url, image }: any) {
+import { TLayoutProps } from "../types";
+
+function List({ title, url, image }: TLayoutProps) {
   return (
     <div className="flex bg-zinc-100  rounded-lg h-[76px] items-center p-2">
       <div className="w-[20%]  relative  h-full rounded-lg overflow-hidden ">

@@ -42,10 +42,11 @@ function Index() {
         </div>
       </p>
       <Grupr />
-      <section className="py-24">
-        <div className="flex items-center gap-3 mb-10">
-          <h1 className="text-3xl  font-bold text-purple-400">All Grups</h1>
+      <section className="py-32">
+        <div className="flex items-center gap-3 mb-10 justify-center">
+          <h1 className="text-2xl font-bold text-purple-400">All Grups</h1>
           <div
+            title="Toggle Layout"
             onClick={() => setIsListLayout(!isListLayout)}
             className="flex items-center justify-center cursor-pointer bg-purple-400 px-3 py-2 rounded-md"
           >

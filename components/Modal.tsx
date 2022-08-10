@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdOutlineClose } from "react-icons/md";
-
-function Modal({ setIsModal, children }: any) {
+import { TModalProps } from "../types";
+function Modal({ setIsModal, children }: TModalProps) {
   return (
     <section className="z-[100] fixed inset-0 backdrop-blur-lg flex justify-center p-3 bg-white/80 items-center">
       {/* close mobile menu button */}

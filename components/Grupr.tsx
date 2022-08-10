@@ -4,6 +4,7 @@ import Modal from "../components/Modal";
 import Image from "next/image";
 import party from "../images/party.png";
 import { FiExternalLink, FiClipboard } from "react-icons/fi";
+import { BsFacebook } from "react-icons/bs";
 function Grupr() {
   const [isExcel, setisExcel] = useState(false);
   const [isModal, setIsModal] = useState(false);
@@ -65,48 +66,52 @@ function Grupr() {
 
       {isModal && (
         <Modal setIsModal={setIsModal}>
-          <h1 className="text-2xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
-            CONGRATULATIONS!
-            <Image
-              src={party}
-              alt="partying emoji"
-              width={40}
-              height={40}
-              priority
-              loading="eager"
-            />
-            {/* <span className="text-orange-500">grupn </span> */}
-          </h1>
-          <p className="mb-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
-            Grup created succesfully!
-          </p>
-          <div className="mx-2">
-            <input
-              onChange={(e) => setTitle(e.target.value)}
-              type="text"
-              disabled
-              value="https://grupr.com/abhsi"
-              className="px-3 py-4 my-2 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
-            />
-          </div>
-          <div className="flex flex-wrap -mt-2">
-            <div className="w-full p-2  md:w-1/2">
-              <button
-                type="button"
-                className="px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
-              >
-                <FiClipboard className="text-xl" /> Copy
-              </button>
+          <>
+            <h1 className="text-2xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
+              CONGRATULATIONS!
+              <Image
+                src={party}
+                alt="partying emoji"
+                width={40}
+                height={40}
+                priority
+                loading="eager"
+              />
+              {/* <span className="text-orange-500">grupn </span> */}
+            </h1>
+            <p className="mb-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
+              Grup created succesfully!
+            </p>
+            <div className="mx-2">
+              <input
+                onChange={(e) => setTitle(e.target.value)}
+                type="text"
+                disabled
+                value="https://grupr.com/abhsi"
+                className="px-3 py-4 my-2 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
+              />
             </div>
-            <div className="w-full p-2 md:w-1/2">
-              <button
-                type="button"
-                className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
-              >
-                <FiExternalLink className="text-xl" /> Preview
-              </button>
+            <div className="flex flex-wrap -mt-2">
+              <div className="w-full p-2  md:w-1/2">
+                <button
+                  type="button"
+                  className="px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
+                >
+                  <FiClipboard className="text-xl" /> Copy
+                </button>
+              </div>
+              <div className="w-full p-2 md:w-1/2">
+                <a
+                  href=""
+                  target="_blank"
+                  type="button"
+                  className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
+                >
+                  <FiExternalLink className="text-xl" /> Preview
+                </a>
+              </div>
             </div>
-          </div>
+          </>
         </Modal>
       )}
     </>
