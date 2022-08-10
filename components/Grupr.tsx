@@ -52,7 +52,9 @@ function Grupr() {
           )}
           <div className="w-full  mt-3 order-4 md:order-none">
             <button
-              type="submit"
+              onClick={() => setIsModal(true)}
+              // type="submit"
+              type="button"
               className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
             >
               Create a Grup
@@ -61,7 +63,7 @@ function Grupr() {
         </div>
       </form>
 
-      {!isModal && (
+      {isModal && (
         <Modal setIsModal={setIsModal}>
           <h1 className="text-2xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
             CONGRATULATIONS!
