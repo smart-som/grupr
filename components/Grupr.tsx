@@ -4,7 +4,13 @@ import Modal from "../components/Modal";
 import Image from "next/image";
 import party from "../images/party.png";
 import { FiExternalLink, FiClipboard } from "react-icons/fi";
-import { BsFacebook } from "react-icons/bs";
+import {
+  BsFacebook,
+  BsTwitter,
+  BsLinkedin,
+  BsWhatsapp,
+  BsTelegram,
+} from "react-icons/bs";
 function Grupr() {
   const [isExcel, setisExcel] = useState(false);
   const [isModal, setIsModal] = useState(false);
@@ -108,6 +114,40 @@ function Grupr() {
                   className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
                 >
                   <FiExternalLink className="text-xl" /> Preview
+                </a>
+              </div>
+              <div className="mt-10 flex flex-wrap justify-center w-full">
+                <h3 className="w-full mb-3 text-xl font-semibold text-center text-zinc-600">
+                  SHARE
+                </h3>
+
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/sharer/sharer.php?u=https://unclebigbay.hashnode.dev"
+                  className="text-3xl mx-2 hover:opacity-80 text-sky-600"
+                >
+                  <BsFacebook />
+                </a>
+                <a
+                  target="_blank"
+                  href="whatsapp://send?text=Your message here"
+                  className="text-3xl mx-2 hover:opacity-80 text-green-700"
+                >
+                  <BsWhatsapp />
+                </a>
+                <a
+                  target="_blank"
+                  href="https://t.me/share/url?url={url}&text={text}"
+                  className="text-3xl mx-2 hover:opacity-80 text-sky-400"
+                >
+                  <BsTelegram />
+                </a>
+                <a
+                  target="_blank"
+                  href=" https://twitter.com/intent/tweet?text=Hello, World"
+                  className="text-3xl mx-2 hover:opacity-80 text-sky-400"
+                >
+                  <BsTwitter />
                 </a>
               </div>
             </div>
