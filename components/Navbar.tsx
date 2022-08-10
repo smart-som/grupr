@@ -69,7 +69,7 @@ function Navbar() {
           </Link>
           <Link href="/signup">
             <a
-              className="bg-purple-400 text-zinc-100 rounded-md flex flex-col items-center  px-4 py-4 lg:py-2 my-6 lg:my-1 font-medium text-md"
+              className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-4 lg:py-2 my-6 lg:my-1 font-medium text-md"
               onClick={() => setIsSidebar(false)}
             >
               Sign Up

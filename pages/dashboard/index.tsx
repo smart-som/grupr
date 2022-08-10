@@ -48,7 +48,7 @@ function Index() {
           <div
             title="Toggle Layout"
             onClick={() => setIsListLayout(!isListLayout)}
-            className="flex items-center justify-center cursor-pointer bg-purple-400 px-3 py-2 rounded-md"
+            className="flex items-center justify-center cursor-pointer hover:bg-purple-500 transition-all ease-in-out bg-purple-400  px-3 py-2 rounded-md"
           >
             {isListLayout ? (
               <BsFillGrid1X2Fill className="text-white text-md" />

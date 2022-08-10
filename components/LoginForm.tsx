@@ -25,7 +25,7 @@ function LoginForm() {
         />
         <button
           type="submit"
-          className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold bg-purple-400 mt-3 w-full"
+          className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  mt-3 w-full"
         >
           Log In
         </button>

@@ -21,7 +21,7 @@ function Footer() {
           />
           <button
             type="submit"
-            className="font-semibold px-3 w-full my-1 md:w-[25%] text-zinc-100 rounded-md h-full py-4 bg-purple-400"
+            className="font-semibold px-3 w-full my-1 md:w-[25%] text-zinc-100 rounded-md h-full py-4 hover:bg-purple-500 transition-all ease-in-out bg-purple-400 "
           >
             Subscribe
           </button>

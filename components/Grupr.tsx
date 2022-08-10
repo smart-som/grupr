@@ -62,7 +62,7 @@ function Grupr() {
               onClick={() => setIsModal(true)}
               // type="submit"
               type="button"
-              className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
+              className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
             >
               Create a Grup
             </button>
@@ -101,7 +101,7 @@ function Grupr() {
               <div className="w-full p-2  md:w-1/2">
                 <button
                   type="button"
-                  className="px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
+                  className="px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
                 >
                   <FiClipboard className="text-xl" /> Copy
                 </button>
@@ -111,7 +111,7 @@ function Grupr() {
                   href=""
                   target="_blank"
                   type="button"
-                  className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold bg-purple-400 w-full"
+                  className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
                 >
                   <FiExternalLink className="text-xl" /> Preview
                 </a>

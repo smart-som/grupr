@@ -241,7 +241,7 @@ const Home: NextPage = () => {
       {/* soft blur items */}
 
       <section className=" md:block hidden">
-        <div className="bg-purple-400 absolute top-[115vh]  lg:w-[280px] w-[150px] lg:h-[280px] h-[150px] lg:-left-[250px] -left-[120px] blur-[120px] lg:blur-[250px]"></div>
+        <div className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  absolute top-[115vh]  lg:w-[280px] w-[150px] lg:h-[280px] h-[150px] lg:-left-[250px] -left-[120px] blur-[120px] lg:blur-[250px]"></div>
         <div className="bg-orange-500 absolute top-[285vh] lg:w-[280px] lg:h-[280px] lg:-right-[250px] blur-[270px]"></div>
       </section>
       {/* soft blur items */}
