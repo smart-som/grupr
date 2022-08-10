@@ -15,7 +15,7 @@ function Index() {
   const items = Array(22).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
-      <h1 className="text-4xl md:text-5xl font-bold text-purple-400 text-center">
+      <h1 className="text-3xl md:text-5xl font-bold text-purple-400 text-center">
         Hello, Johnson{" "}
         <Image
           src={smiley}
