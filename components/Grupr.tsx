@@ -139,7 +139,7 @@ function Grupr() {
                   <FiExternalLink className="text-xl" /> Preview
                 </a>
               </div>
-              <div className="mt-10 flex flex-wrap justify-center w-full">
+              <div className="mt-8 flex flex-wrap justify-center w-full">
                 <h3 className="w-full mb-3 text-xl font-semibold text-center text-zinc-600">
                   SHARE
                 </h3>
