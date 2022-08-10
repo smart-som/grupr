@@ -38,7 +38,7 @@ function Grupr() {
             placeholder={
               "https://www.androidpill.com/\nhttps://dribbble.com/\nhttps://www.activision.com/"
             }
-            autoFocus={true}
+            autoFocus={false}
             required
             rows={5}
             //   cols={20}
