@@ -7,7 +7,7 @@ function error() {
     <section className="min-h-[calc(100vh-5rem)] bg-dark relative bg-purple-400 text-zinc-50 flex items-center justify-center mb-16">
       <div className=" max-w-6xl  mx-auto flex items-center flex-col justify-center lg:flex-row  px-6 md:px-24 md:py-20 lg:py-32 gap-10 lg:gap-28">
         <div className="w-full lg:w-1/2">
-          <div className="  w-full lg:h-96 h-72 relative ">
+          <div className="  w-full lg:h-96 h-56 relative ">
             <Image
               src={whale}
               //   layout="fill"
