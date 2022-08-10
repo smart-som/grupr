@@ -99,7 +99,7 @@ function Grupr() {
       </form>
 
       {isModal && (
-        <Modal setIsModal={setIsModal}>
+        <Modal setIsModal={setIsModal} isModal={isModal}>
           <>
             <h1 className="text-2xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
               CONGRATULATIONS!
