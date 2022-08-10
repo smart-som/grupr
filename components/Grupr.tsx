@@ -4,6 +4,7 @@ import Modal from "../components/Modal";
 import Image from "next/image";
 import party from "../images/party.png";
 import { FiExternalLink, FiClipboard } from "react-icons/fi";
+import axios from "axios";
 import {
   BsFacebook,
   BsTwitter,
@@ -15,9 +16,33 @@ function Grupr() {
   const [isExcel, setisExcel] = useState(false);
   const [isModal, setIsModal] = useState(false);
   const [title, setTitle] = useState("");
+  const [links, setLinks] = useState("");
+  const [grupUrl, setGrupUrl] = useState("");
+
+  const handleSubmit = () => {
+    // split strings by new line
+    const newLinks = links.split("\n");
+    // format links input to remove empty strings
+    const formattedLinks = newLinks.filter((link) => link !== "");
+
+    // axios post request to server
+    axios
+      .post("/api/shortenUrls", { formattedLinks, title })
+      .then((res) => {
+        const { grupUrl } = res.data;
+        setGrupUrl(grupUrl);
+        setIsModal(true);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <>
-      <form className="shadow-md rounded-lg p-2 bg-white flex flex-wrap max-w-xl mt-10 mx-auto border-purple-200/5 border-2">
+      <form
+        // onSubmit={handleSubmit}
+        className="shadow-md rounded-lg p-2 bg-white flex flex-wrap max-w-xl mt-10 mx-auto border-purple-200/5 border-2"
+      >
         <div className="w-full md:w-[75%] p-2 order-2 md:order-none">
           <input
             onChange={(e) => setTitle(e.target.value)}
@@ -50,6 +75,7 @@ function Grupr() {
               placeholder={
                 "https://www.androidpill.com/\nhttps://dribbble.com/\nhttps://www.activision.com/"
               }
+              onChange={(e) => setLinks(e.target.value)}
               autoFocus={false}
               required
               rows={5}
@@ -59,7 +85,8 @@ function Grupr() {
           )}
           <div className="w-full  mt-3 order-4 md:order-none">
             <button
-              onClick={() => setIsModal(true)}
+              // onClick={() => setIsModal(true)}
+              onClick={handleSubmit}
               // type="submit"
               type="button"
               className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
@@ -93,7 +120,7 @@ function Grupr() {
                 onChange={(e) => setTitle(e.target.value)}
                 type="text"
                 disabled
-                value="https://grupr.com/abhsi"
+                value={grupUrl}
                 className="px-3 py-4 my-2 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
               />
             </div>
