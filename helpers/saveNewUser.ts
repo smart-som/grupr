@@ -13,7 +13,6 @@ const saveNewUser = async (userData: TsignUserData) => {
         // userId: userData.uid,
         name: userData.name,
         email: userData.email,
-        grups: [],
         created: new Date().toISOString(),
       });
     } catch (err) {
