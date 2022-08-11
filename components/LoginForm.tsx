@@ -30,12 +30,12 @@ function LoginForm() {
 
     signInWithEmailAndPassword(auth, email, password)
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         router.push("/dashboard");
         // history.back()
       })
       .catch((err) => {
-        console.log(err.code);
+        // console.log(err.code);
         setMessage(err.message.replaceAll("Firebase:", ""));
       });
   };

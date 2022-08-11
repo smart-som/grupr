@@ -70,7 +70,7 @@ function getShortenData({
       setIsModal(true);
     })
     .catch((err) => {
-      console.log(err);
+      // console.log(err);
     });
 }
 export { handleGruprSubmit };
