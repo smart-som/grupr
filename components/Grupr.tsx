@@ -13,7 +13,7 @@ function Grupr() {
   const [isModal, setIsModal] = useState(false);
   const [title, setTitle] = useState("This is a title");
   const [textArealinks, settextArealinks] = useState(
-    "https://www.androidpill.com/\nhttps://dribbble.com/\nhttps://www.activision.com/"
+    "https://www.androidpill.com/\nhttps://www.dribbble.com/\nhttps://www.activision.com/\nhttps://www.google.com/"
   );
   const [grupUrl, setGrupUrl] = useState("");
   const [excelFile, setExcelFile] = useState<File[]>([]);
@@ -74,13 +74,13 @@ function Grupr() {
             <textarea
               className="p-3 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
               placeholder={
-                "https://www.androidpill.com/\nhttps://dribbble.com/\nhttps://www.activision.com/"
+                "https://www.androidpill.com/\nhttps://www.dribbble.com/\nhttps://www.activision.com/\nhttps://www.google.com/"
               }
               onChange={(e) => settextArealinks(e.target.value)}
               autoFocus={false}
               required
               value={textArealinks}
-              rows={5}
+              rows={7}
             ></textarea>
           )}
           {/* submit button */}

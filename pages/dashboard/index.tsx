@@ -12,15 +12,14 @@ import testImg2 from "../../images/d2.png";
 
 function Index() {
   const [isListLayout, setIsListLayout] = useState(true);
-  const items = Array(22).fill(1);
+  const items = Array(12).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
-      <h1 className="text-3xl md:text-5xl font-bold text-purple-400 text-center">
+      <h1 className="text-3xl flex items-center justify-center gap-x-2 md:text-5xl font-bold text-purple-400 text-center">
         Hello, Johnson{" "}
         <Image
           src={smiley}
           alt="user emoji"
-          className="-mb-3"
           width={40}
           height={40}
           priority
@@ -28,7 +27,7 @@ function Index() {
         />
         {/* <span className="text-orange-500">grupn </span> */}
       </h1>
-      <p className="mt-6 flex gap-x-2 justify-center text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
+      <p className="mt-4 flex gap-x-1 justify-center text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
         Let&apos;s get Grupn
         <div className="w-9 h-9 rotate-45 -mt-3 rounded-full relative ">
           <Image
