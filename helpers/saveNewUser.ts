@@ -8,7 +8,8 @@ const saveNewUser = async (userData: TsignUserData) => {
   // store user info to db only if user is a new user
   if (userStatus?.isNewUser) {
     try {
-      await addDoc(collection(db, "userData", userData.uid), {
+      await addDoc(collection(db, "userData"), {
+        userId: userData.uid,
         name: userData.name,
         email: userData.email,
         grups: [],
