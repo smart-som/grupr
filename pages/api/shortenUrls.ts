@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { customAlphabet } from "nanoid";
 import { db } from "../../config";
-import { Timestamp, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 
 export default async function handler(
   req: NextApiRequest,
@@ -24,7 +24,6 @@ export default async function handler(
       destinations: req.body.destinations,
       title: req.body.title,
     };
-    /*/ **********************/
 
     try {
       //  save user info to db and use user id as doc id
@@ -33,14 +32,13 @@ export default async function handler(
       console.log(err);
     }
 
-    console.log(result);
-    return res
-      .status(200)
-      .json({
-        code: 200,
-        message: "success",
-        fullUrl: `https://www.grupr.nl/${grupId} `,
-      });
+    // console.log(result);
+    // return result;
+    return res.status(200).json({
+      code: 200,
+      message: "success",
+      fullUrl: `https://www.grupr.nl/${grupId} `,
+    });
   }
 
   //   if api request is a not post request
