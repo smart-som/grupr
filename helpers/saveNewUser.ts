@@ -14,7 +14,7 @@ const saveNewUser = async (userData: TsignUserData) => {
         name: userData.name,
         email: userData.email,
         grups: [],
-        created: Timestamp.now(),
+        created: new Date().toISOString(),
       });
     } catch (err) {
       console.log(err);
