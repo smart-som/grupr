@@ -18,8 +18,8 @@ import { db } from "../../config";
 import nookies from "nookies";
 import { TdashboardProps } from "../../types";
 
-function Index({ userData }: any) {
-  console.log(userData);
+function Index({ userData }: TdashboardProps) {
+  // console.log(userData);
   const [isListLayout, setIsListLayout] = useState(true);
   const items = Array(12).fill(1);
   return (
@@ -110,7 +110,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     if (docSnap.exists()) {
       const { name, email, grups } = docSnap.data();
       const userData = { name, email, grups };
-      console.log(userData.name);
+      // console.log(userData.name);
 
       /**********return user data************************************ */
       return {
