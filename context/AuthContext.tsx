@@ -37,7 +37,7 @@ export function AuthProvider({ children }: any) {
       console.log(`refreshing token...`);
       const user = firebaseClient.auth().currentUser;
       if (user) await user.getIdToken(true);
-    }, 2 * 60 * 60 * 24 * 1000);
+    }, 2 * 60 * 60 * 24 * 10000);
     return () => clearInterval(handle);
   }, []);
 

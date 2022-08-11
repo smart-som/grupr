@@ -1,32 +1,48 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { customAlphabet } from "nanoid";
+import { db } from "../../config";
+import { Timestamp, setDoc, doc } from "firebase/firestore";
 
-type Data = {
-  name: string;
-};
-
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   console.log(req.body);
   // generate a random id for the grup
   if (req.method == "POST") {
-    if (req.body.formattedLinks.length! > 8) {
-      return res.status(405).json({
-        type: "Error",
-        code: 405,
-        message: "Invalid URL, cannot shorten",
-      });
-    }
+    // if (req.body.destinations.length! > 8) {
+    //   return res.status(405).json({
+    //     type: "Error",
+    //     code: 405,
+    //     message: "Invalid URL, cannot shorten",
+    //   });
+    // }
     const characters =
-      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
     const getHash = customAlphabet(characters, 6);
     const grupId = getHash();
 
     //  save to db
+    const result = {
+      // code: 200,
+      grupId,
+      fullUrl: `https://www.grupr.nl/${grupId} `,
+      dateCreated: new Date().toISOString(),
+      createdBy: req.body.createdBy,
+      destinations: req.body.destinations,
+      title: req.body.title,
+    };
+    /*/ **********************/
 
-    return res.status(200).json({
-      code: 200,
-      grupUrl: `https://www.grupr.nl/${grupId} `,
-    });
+    try {
+      //  save user info to db and use user id as doc id
+      await setDoc(doc(db, "grups", grupId), result);
+    } catch (err) {
+      console.log(err);
+    }
+
+    console.log(result);
+    return res.status(200).json(result);
   }
 
   //   if api request is a not post request

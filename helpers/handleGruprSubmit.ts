@@ -10,6 +10,7 @@ const handleGruprSubmit = (params: TsubmitProps) => {
     setIsModal,
     title,
     excelFile,
+    createdBy,
   } = params;
   e.preventDefault();
 
@@ -20,53 +21,51 @@ const handleGruprSubmit = (params: TsubmitProps) => {
       const data = e.target.result;
       const csvLinks = data.split("\r\n");
       // format links input to remove empty strings
-      const formattedLinks = csvLinks.filter((link: any) => link !== "");
+      const destinations = csvLinks.filter((link: any) => link !== "");
 
       //   console.log({
-      //     formattedLinks,
+      //     destinations,
       //     setGrupUrl,
       //     setIsModal,
       //     title,
       //   });
       getShortenData({
-        formattedLinks,
+        destinations,
         setGrupUrl,
         setIsModal,
         title,
+        createdBy,
       });
     };
     fileReader.readAsText(excelFile);
   } else {
     const newLinks = textArealinks.split("\n");
     // format links input to remove empty strings
-    const formattedLinks = newLinks.filter((link: any) => link !== "");
+    const destinations = newLinks.filter((link: any) => link !== "");
 
     getShortenData({
       setGrupUrl,
       setIsModal,
       title,
-      formattedLinks,
+      destinations,
+      createdBy,
     });
   }
 };
 function getShortenData({
-  formattedLinks,
+  destinations,
   setGrupUrl,
   setIsModal,
   title,
+  createdBy,
 }: TgetShortenDataProps) {
-  // split strings by new line
-  //   console.log({
-  //     formattedLinks,
-  //     title,
-  //   });
-
   // axios post request to server
+
   axios
-    .post("/api/shortenUrls", { formattedLinks, title })
+    .post("/api/shortenUrls", { destinations, title, createdBy })
     .then((res) => {
-      const { grupUrl } = res.data;
-      setGrupUrl(grupUrl);
+      const { fullUrl } = res.data;
+      setGrupUrl(fullUrl);
       setIsModal(true);
     })
     .catch((err) => {

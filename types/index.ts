@@ -10,10 +10,11 @@ export interface TLayoutProps {
   image: any;
 }
 export interface TgetShortenDataProps {
-  formattedLinks?: Array<string>;
+  destinations?: Array<string>;
   setGrupUrl: (grupUrl: string) => void;
   setIsModal: (isModal: boolean) => void;
   title: string;
+  createdBy: string;
 }
 
 export interface TsubmitProps extends TgetShortenDataProps {
@@ -21,6 +22,7 @@ export interface TsubmitProps extends TgetShortenDataProps {
   textArealinks: string;
   excelFile: any;
   e: any;
+  createdBy: string;
 }
 
 export interface TsignUserData {

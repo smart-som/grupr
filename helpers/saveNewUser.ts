@@ -1,5 +1,5 @@
 import { db } from "../config";
-import { collection, addDoc, Timestamp, setDoc, doc } from "firebase/firestore";
+import { Timestamp, setDoc, doc } from "firebase/firestore";
 import { TsignUserData } from "../types";
 import { getAdditionalUserInfo } from "firebase/auth";
 

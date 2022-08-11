@@ -6,7 +6,7 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 function DashboardList() {
   return (
-    <div className="bg-purple-100 text-purple-400 flex items-center rounded-md  max-w-3xl w-full mx-auto md:px-5 px-3">
+    <div className="bg-purple-100 hover:bg-purple-400/10 transition-all ease-in-out duration-200 text-purple-400 flex items-center rounded-md  max-w-3xl w-full mx-auto md:px-5 px-3">
       <div className="w-7 h-7 rotate-45 mr-3  rounded-full relative ">
         <Image
           src={link}

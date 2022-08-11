@@ -8,6 +8,8 @@ import axios from "axios";
 import { handleGruprSubmit } from "../helpers/handleGruprSubmit";
 import CopyToClipboard from "./CopyToClipboard";
 import Share from "./Share";
+import { checkAuth } from "../helpers/checkAuth";
+
 function Grupr() {
   const [isExcel, setisExcel] = useState(false);
   const [isModal, setIsModal] = useState(false);
@@ -17,6 +19,10 @@ function Grupr() {
   );
   const [grupUrl, setGrupUrl] = useState("");
   const [excelFile, setExcelFile] = useState<File[]>([]);
+
+  const user = checkAuth();
+  const createdBy = user ? user.uid : "Anonymous";
+  // console.log({ createdBy });
 
   return (
     <>
@@ -29,6 +35,7 @@ function Grupr() {
             setIsModal,
             title,
             excelFile,
+            createdBy,
             e,
           })
         }
