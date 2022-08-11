@@ -13,10 +13,10 @@ function UploadExcel({ title, excelFile, setExcelFile }: UploadExcelProps) {
     setExcelFile(e.target.files[0]);
     setisUploaded(true);
   };
-  useEffect(() => {
-    console.log(isUploaded);
-    console.log(excelFile);
-  }, []);
+  // useEffect(() => {
+  //   console.log(isUploaded);
+  //   console.log(excelFile);
+  // }, []);
   return (
     <>
       <div className="min-h-[150px] relative cursor-pointer border-dashed border-2 rounded-md flex items-center flex-col">

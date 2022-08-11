@@ -56,10 +56,10 @@ function getShortenData({
   title,
 }: TgetShortenDataProps) {
   // split strings by new line
-  console.log({
-    formattedLinks,
-    title,
-  });
+  //   console.log({
+  //     formattedLinks,
+  //     title,
+  //   });
 
   // axios post request to server
   axios
