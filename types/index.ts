@@ -9,4 +9,16 @@ export interface TLayoutProps {
   url: string;
   image: any;
 }
-// export interface TGridProps extends TListProps {}
+export interface TgetShortenDataProps {
+  formattedLinks?: Array<string>;
+  setGrupUrl: (grupUrl: string) => void;
+  setIsModal: (isModal: boolean) => void;
+  title: string;
+}
+
+export interface TsubmitProps extends TgetShortenDataProps {
+  isExcel: boolean;
+  textArealinks: string;
+  excelFile: any;
+  e: any;
+}

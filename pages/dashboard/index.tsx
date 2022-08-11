@@ -59,9 +59,9 @@ function Index() {
         </div>
 
         <section className="flex flex-wrap">
-          {items.map((item) => {
+          {items.map((item, index) => {
             return (
-              <div className="w-full md:w-1/2 p-3 lg:w-1/3">
+              <div key={index} className="w-full md:w-1/2 p-3 lg:w-1/3">
                 {isListLayout ? (
                   <List
                     title="Dribbble - Discover the World"

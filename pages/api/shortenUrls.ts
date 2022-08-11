@@ -9,6 +9,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log(req.body);
   // generate a random id for the grup
   if (req.method == "POST") {
+    if (req.body.formattedLinks.length! > 8) {
+      return res.status(405).json({
+        type: "Error",
+        code: 405,
+        message: "Invalid URL, cannot shorten",
+      });
+    }
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     const getHash = customAlphabet(characters, 6);
@@ -16,9 +23,10 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
 
     //  save to db
 
-    res
-      .status(200)
-      .json({ code: 200, grupUrl: `https://www.grupr.nl/${grupId} ` });
+    return res.status(200).json({
+      code: 200,
+      grupUrl: `https://www.grupr.nl/${grupId} `,
+    });
   }
 
   //   if api request is a not post request
