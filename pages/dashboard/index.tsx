@@ -9,12 +9,20 @@ import { FaThList } from "react-icons/fa";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import testImg1 from "../../images/d.png";
 import testImg2 from "../../images/d2.png";
+import {
+  useAuthUser,
+  withAuthUser,
+  withAuthUserTokenSSR,
+} from "next-firebase-auth";
 
-function Index() {
+const Index = () => {
+  const AuthUser = useAuthUser();
   const [isListLayout, setIsListLayout] = useState(true);
   const items = Array(12).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
+      <p>Your email is {AuthUser.email ? AuthUser.email : "unknown"}.</p>
+
       <h1 className="text-3xl flex items-center justify-center gap-x-2 md:text-5xl font-bold text-purple-400 text-center">
         Hello, Johnson{" "}
         <Image
@@ -81,6 +89,11 @@ function Index() {
       </section>
     </main>
   );
-}
+};
 
-export default Index;
+// Note that this is a higher-order function.
+export const getServerSideProps = withAuthUserTokenSSR()();
+
+export default withAuthUser()(Index);
+
+// export default Index;
