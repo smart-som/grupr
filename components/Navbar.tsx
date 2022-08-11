@@ -51,7 +51,7 @@ function Navbar() {
               Features
             </a>
           </Link>
-          <Link href="/api">
+          <Link href="/api-v1">
             <a
               className="lg:hover:bg-transparent hover:bg-zinc-50 transition-all ease-linear duration-100  hover:text-purple-400 flex flex-col items-center  px-4 py-4 rounded lg:py-2 my-6 lg:my-1 font-medium text-md"
               onClick={() => setIsSidebar(false)}
