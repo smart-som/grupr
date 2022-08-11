@@ -1,16 +1,62 @@
 import React, { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
+import { auth } from "../config";
+import { useRouter } from "next/router";
+import {
+  createUserWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "firebase/auth";
 function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
+  const router = useRouter();
+  const [message, setMessage] = useState(null);
+
+  const googleProvider = new GoogleAuthProvider();
+
+  const signUpWithEmailAndPassword = (event: any) => {
+    event.preventDefault();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((res) => {
+        router.push("/dashboard");
+        console.log(res);
+      })
+      .catch((err) => {
+        setMessage(err.message.replaceAll("Firebase:", ""));
+      });
+  };
+
+  const signUpWithGoogleProvider = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        console.log(res);
+        router.push("/dashboard");
+      })
+      .catch((err) => {
+        console.log(err);
+        // setMessage(err.toString())
+      });
+    // catch error
+  };
   return (
     <section className="max-w-xl mx-auto  px-5 py-7 shadow rounded-md border border-purple-100/20">
       <h1 className="text-3xl font-bold text-purple-400 text-center">
         Create An Account!
       </h1>
-      <form className="mt-10 w-full ">
+      {message ? (
+        <p className=" w-full bg-red-500 py-3 px-2 text-center text-sm font-extralight text-white ">
+          {message}
+        </p>
+      ) : null}
+      <form
+        className="mt-10 w-full "
+        onSubmit={(event) => signUpWithEmailAndPassword(event)}
+      >
         <input
+          autoComplete="on"
+          name="name"
           onChange={(e) => setName(e.target.value)}
           type="text"
           required
@@ -19,6 +65,8 @@ function SignupForm() {
         />
         <input
           type="email"
+          autoComplete="on"
+          name="email address"
           onChange={(e) => setEmail(e.target.value)}
           required
           placeholder="Email"
@@ -27,6 +75,8 @@ function SignupForm() {
         <input
           onChange={(e) => setPassword(e.target.value)}
           type="password"
+          autoComplete="on"
+          name="password"
           required
           placeholder="Password"
           className="p-3 my-3  outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
@@ -38,6 +88,7 @@ function SignupForm() {
           Sign Up
         </button>
         <button
+          onClick={signUpWithGoogleProvider}
           type="button"
           className="flex items-center border  justify-center px-2 py-4 outline-none   rounded-md text-zinc-800 font-semibold  mt-3 w-full"
         >

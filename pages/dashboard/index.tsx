@@ -9,14 +9,20 @@ import { FaThList } from "react-icons/fa";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import testImg1 from "../../images/d.png";
 import testImg2 from "../../images/d2.png";
-
-function Index() {
+import { useAuth } from "../../context/AuthContext";
+import { GetServerSidePropsContext } from "next";
+import { useRouter } from "next/router";
+import { firebaseAdmin } from "../../config/firebaseAdmin";
+import { firebaseClient } from "../../config/firebaseClient";
+import nookies from "nookies";
+function Index({ userData }: any) {
+  console.log(userData);
   const [isListLayout, setIsListLayout] = useState(true);
   const items = Array(12).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
-      <h1 className="text-3xl flex items-center justify-center gap-x-2 md:text-5xl font-bold text-purple-400 text-center">
-        Hello, Johnson{" "}
+      <h1 className="text-2xl flex items-center justify-center gap-x-2 md:text-4xl font-bold text-purple-400 text-center">
+        Hello, {userData && userData.name && userData.name.split(" ")[0]}
         <Image
           src={smiley}
           alt="user emoji"
@@ -84,3 +90,35 @@ function Index() {
 }
 
 export default Index;
+
+export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+  try {
+    const cookies = nookies.get(ctx);
+
+    // console.log(JSON.stringify(cookies, null, 2))
+    const token = await firebaseAdmin.auth().verifyIdToken(cookies.token);
+    const { uid, email } = token;
+    // the user is authenticated!
+    // FETCH STUFF HERE
+    const userData = { uid, email };
+    return {
+      props: { userData },
+    };
+  } catch (err) {
+    // either the `token` cookie didn't exist
+    // or token verification failed
+    // either way: redirect to the login page
+    // either the `token` cookie didn't exist
+    // or token verification failed
+    // either way: redirect to the login page
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+      // `as never` is required for correct type inference
+      // by InferGetServerSidePropsType below
+      props: {} as never,
+    };
+  }
+}

@@ -5,9 +5,18 @@ import { CgMenu } from "react-icons/cg";
 import { MdOutlineClose } from "react-icons/md";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { checkAuth } from "../helpers/checkAuth";
+import { auth } from "../config";
+import { signOut } from "firebase/auth";
 
 function Navbar() {
   const [isSidebar, setIsSidebar] = useState(false);
+  const router = useRouter();
+  const signout = async () => {
+    await signOut(auth);
+    router.push("/");
+    setIsSidebar(false);
+  };
   return (
     <header className="shadow-xs max-h-[105px] border-b border-b-purple-200/5  w-full text-zinc-600 sticky top-0 bg-white/80 backdrop-blur-lg  z-50">
       <nav className=" max-w-6xl mx-auto flex items-center justify-between px-6 md:px-3 ">
@@ -35,14 +44,16 @@ function Navbar() {
               Home
             </a>
           </Link>
-          <Link href="/dashboard">
-            <a
-              className="lg:hover:bg-transparent hover:bg-zinc-50 transition-all ease-linear duration-100  hover:text-purple-400 flex flex-col items-center  px-4 py-4 rounded lg:py-2 my-6 lg:my-1 font-medium text-md"
-              onClick={() => setIsSidebar(false)}
-            >
-              Dashboard
-            </a>
-          </Link>
+          {checkAuth() && (
+            <Link href="/dashboard">
+              <a
+                className="lg:hover:bg-transparent hover:bg-zinc-50 transition-all ease-linear duration-100  hover:text-purple-400 flex flex-col items-center  px-4 py-4 rounded lg:py-2 my-6 lg:my-1 font-medium text-md"
+                onClick={() => setIsSidebar(false)}
+              >
+                Dashboard
+              </a>
+            </Link>
+          )}
           <Link href="/#features">
             <a
               className="lg:hover:bg-transparent hover:bg-zinc-50 transition-all ease-linear duration-100  hover:text-purple-400 flex flex-col items-center  px-4 py-4 rounded lg:py-2 my-6 lg:my-1 font-medium text-md"
@@ -59,22 +70,34 @@ function Navbar() {
               Api
             </a>
           </Link>
-          <Link href="/login">
-            <a
-              className="lg:bg-transparent bg-purple-100 lg:hover:text-purple-400 flex flex-col items-center  px-4 py-4 lg:py-2 mt-4 mb-0 lg:mt-1 lg:mb-1 font-medium text-md"
-              onClick={() => setIsSidebar(false)}
-            >
-              Log In
-            </a>
-          </Link>
-          <Link href="/signup">
-            <a
+
+          {checkAuth() ? (
+            <button
               className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-4 lg:py-2 my-6 lg:my-1 font-medium text-md"
-              onClick={() => setIsSidebar(false)}
+              onClick={signout}
             >
-              Sign Up
-            </a>
-          </Link>
+              Logout
+            </button>
+          ) : (
+            <>
+              <Link href="/login">
+                <a
+                  className="lg:bg-transparent bg-purple-100 lg:hover:text-purple-400 flex flex-col items-center  px-4 py-4 lg:py-2 mt-4 mb-0 lg:mt-1 lg:mb-1 font-medium text-md"
+                  onClick={() => setIsSidebar(false)}
+                >
+                  Log In
+                </a>
+              </Link>
+              <Link href="/signup">
+                <a
+                  className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-4 lg:py-2 my-6 lg:my-1 font-medium text-md"
+                  onClick={() => setIsSidebar(false)}
+                >
+                  Sign Up
+                </a>
+              </Link>
+            </>
+          )}
 
           {/* close mobile menu button */}
           <MdOutlineClose
