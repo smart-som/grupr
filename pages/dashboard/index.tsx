@@ -17,6 +17,7 @@ import { doc, getDoc, query, where } from "firebase/firestore";
 import { db } from "../../config";
 import nookies from "nookies";
 import { TdashboardProps } from "../../types";
+import DashboardList from "../../components/DashboardList";
 
 function Index({ userData }: TdashboardProps) {
   // console.log(userData);
@@ -52,8 +53,8 @@ function Index({ userData }: TdashboardProps) {
       <Grupr />
       <section className="py-32">
         <div className="flex items-center gap-3 mb-10 justify-center">
-          <h1 className="text-2xl font-bold text-purple-400">All Grups</h1>
-          <div
+          <h1 className="text-3xl font-bold text-purple-400">All Grups</h1>
+          {/* <div
             title="Toggle Layout"
             onClick={() => setIsListLayout(!isListLayout)}
             className="flex items-center justify-center cursor-pointer hover:bg-purple-500 transition-all ease-in-out bg-purple-400  px-3 py-2 rounded-md"
@@ -63,30 +64,29 @@ function Index({ userData }: TdashboardProps) {
             ) : (
               <FaThList className="text-white text-md" />
             )}
-          </div>
+          </div> */}
         </div>
 
-        <section className="flex flex-wrap">
+        <section className="w-full flex flex-col gap-y-3">
           {items.map((item, index) => {
-            return (
-              <div key={index} className="w-full md:w-1/2 p-3 lg:w-1/3">
-                {isListLayout ? (
-                  <List
-                    title="Dribbble - Discover the World"
-                    url="www.dribbble.com"
-                    image={testImg1}
-                  />
-                ) : (
-                  <Grid
-                    title="Activision - Call Of Duty Modern Warfare"
-                    url="www.activision.com"
-                    image={testImg2}
-                  />
-                )}
-              </div>
-            );
+            return <DashboardList />;
           })}
         </section>
+        {/*  // <div key={index} className="w-full md:w-1/2 p-3 lg:w-1/3">
+              //   {isListLayout ? (
+              //     <List
+              //       title="Dribbble - Discover the World"
+              //       url="www.dribbble.com"
+              //       image={testImg1}
+              //     />
+              //   ) : (
+              //     <Grid
+              //       title="Activision - Call Of Duty Modern Warfare"
+              //       url="www.activision.com"
+              //       image={testImg2}
+              //     />
+              //   )}
+              // </div> */}
       </section>
     </main>
   );

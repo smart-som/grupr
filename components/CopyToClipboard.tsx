@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiClipboard } from "react-icons/fi";
-
-function CopyToClipboard({ text }: { text: string }) {
+import { TcopyToClipboardProps } from "../types";
+function CopyToClipboard({ text, type }: TcopyToClipboardProps) {
   const [isCopied, setIsCopied] = useState(false);
 
   const handleCopy = () => {
@@ -14,7 +14,7 @@ function CopyToClipboard({ text }: { text: string }) {
       setTimeout(() => setIsCopied(false), 3000);
     }
   };
-  return (
+  return type === 1 ? (
     <button
       onClick={handleCopy}
       type="button"
@@ -23,6 +23,24 @@ function CopyToClipboard({ text }: { text: string }) {
       } font-semibold  transition-all ease-in-out   w-full`}
     >
       <FiClipboard className="text-xl" /> {isCopied ? "Copied" : "Copy"}
+    </button>
+  ) : (
+    <button
+      onClick={handleCopy}
+      type="button"
+      className={`px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-purple-300 font-semibold  transition-all ease-in-out   w-full`}
+    >
+      {isCopied ? (
+        <>
+          <span className="block md:hidden text-sm"> ✔</span>
+          <span className="md:block hidden text-sm">Copied ✔</span>
+        </>
+      ) : (
+        <>
+          <FiClipboard className="text-xl" />
+          <span className="md:block hidden text-sm">Copy</span>
+        </>
+      )}
     </button>
   );
 }

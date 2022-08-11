@@ -37,3 +37,8 @@ export interface TdashboardProps {
     email: string;
   };
 }
+
+export interface TcopyToClipboardProps {
+  text: string;
+  type: 1 | 2;
+}

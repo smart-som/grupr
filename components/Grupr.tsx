@@ -126,7 +126,7 @@ function Grupr() {
             </div>
             <div className="flex flex-wrap -mt-2">
               <div className="w-full p-2  md:w-1/2">
-                <CopyToClipboard text={grupUrl} />
+                <CopyToClipboard type={1} text={grupUrl} />
               </div>
               <div className="w-full p-2 md:w-1/2">
                 <a
