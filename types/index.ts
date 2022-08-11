@@ -26,4 +26,6 @@ export interface TsubmitProps extends TgetShortenDataProps {
 export interface TsignUserData {
   email: string;
   name: string;
+  uid: string;
+  res: any;
 }

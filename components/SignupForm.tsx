@@ -20,11 +20,11 @@ function SignupForm() {
   const signUpWithEmailAndPassword = async (event: any) => {
     event.preventDefault();
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const res = await createUserWithEmailAndPassword(auth, email, password);
       // console.log({ createUser });
 
       // store user info to database
-      await saveNewUser({ name, email });
+      await saveNewUser({ name, email, res, uid: res.user.uid });
 
       // console.log(saveUserDataToDb);
 
@@ -37,9 +37,15 @@ function SignupForm() {
 
   const signUpWithGoogleProvider = async () => {
     try {
-      const { user } = await signInWithPopup(auth, googleProvider);
-      // store user info to database
-      await saveNewUser({ name: user.displayName!, email: user.email! });
+      const res = await signInWithPopup(auth, googleProvider);
+
+      // if user is a new user, store user info to database
+      await saveNewUser({
+        name: res.user.displayName!,
+        email: res.user.email!,
+        res,
+        uid: res.user.uid,
+      });
 
       // console.log(saveUserDataToDb);
 

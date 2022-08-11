@@ -7,6 +7,8 @@ import {
 } from "firebase/auth";
 import { auth } from "../config";
 import { useRouter } from "next/router";
+import saveNewUser from "../helpers/saveNewUser";
+
 function LoginForm() {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -38,20 +40,25 @@ function LoginForm() {
       });
   };
 
-  const signInWithGoogleProvider = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((res) => {
-        console.log(res);
-        // This gives you a Google Access Token. You can use it to access Google APIs.
-        // const credential = GoogleAuthProvider.credentialFromResult(res);
-        // const token = credential.accessToken;
-        router.push("/dashboard");
-        // history.back()
-      })
-      .catch((err) => {
-        console.log(err);
-        setMessage(err.message.replaceAll("Firebase:", ""));
+  const signInWithGoogleProvider = async () => {
+    try {
+      const res = await signInWithPopup(auth, googleProvider);
+      // if user is a new user, store user info to database
+      await saveNewUser({
+        name: res.user.displayName!,
+        email: res.user.email!,
+        res,
+        uid: res.user.uid,
       });
+
+      // console.log(saveUserDataToDb);
+
+      // redirect to dashboard
+      router.push("/dashboard");
+    } catch (err) {
+      alert(err);
+      // setMessage(err.toString())
+    }
     // catch error
   };
 
@@ -63,7 +70,7 @@ function LoginForm() {
       <form className="mt-10 w-full " onSubmit={(event) => logIn(event)}>
         {/* error message */}
         {message ? (
-          <p className=" my-5 w-full bg-red-500 py-3 px-2 text-center text-sm font-extralight text-white ">
+          <p className="  w-full bg-red-500 py-3 px-2 text-center text-sm font-extralight text-white ">
             {message}
           </p>
         ) : null}
