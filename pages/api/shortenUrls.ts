@@ -8,23 +8,15 @@ export default async function handler(
   res: NextApiResponse
 ) {
   console.log(req.body);
-  // generate a random id for the grup
   if (req.method == "POST") {
-    // if (req.body.destinations.length! > 8) {
-    //   return res.status(405).json({
-    //     type: "Error",
-    //     code: 405,
-    //     message: "Invalid URL, cannot shorten",
-    //   });
-    // }
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
+    // generate a random id for the grup
     const getHash = customAlphabet(characters, 6);
     const grupId = getHash();
 
     //  save to db
     const result = {
-      // code: 200,
       grupId,
       fullUrl: `https://www.grupr.nl/${grupId} `,
       dateCreated: new Date().toISOString(),
@@ -42,7 +34,13 @@ export default async function handler(
     }
 
     console.log(result);
-    return res.status(200).json(result);
+    return res
+      .status(200)
+      .json({
+        code: 200,
+        message: "success",
+        fullUrl: `https://www.grupr.nl/${grupId} `,
+      });
   }
 
   //   if api request is a not post request
