@@ -100,7 +100,7 @@ function Grupr() {
       {isModal && (
         <Modal setIsModal={setIsModal} isModal={isModal}>
           <>
-            <h1 className="text-2xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
+            <h1 className="text-xl flex items-center gap-x-2 mx-auto w-fit mb-1 md:text-3xl font-bold text-purple-400 text-center">
               CONGRATULATIONS!
               <Image
                 src={party}
@@ -112,7 +112,7 @@ function Grupr() {
               />
               {/* <span className="text-orange-500">grupn </span> */}
             </h1>
-            <p className="mb-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
+            <p className="mb-6 text-sm md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
               Grup created succesfully!
             </p>
             <div className="mx-2">

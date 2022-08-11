@@ -9,8 +9,8 @@ import {
 function Share({ url }: { url: string }) {
   return (
     <div className="mt-8 flex flex-wrap justify-center w-full">
-      <h3 className="w-full mb-3 text-xl font-semibold text-center text-zinc-600">
-        SHARE
+      <h3 className="w-full mb-3 text-md font-semibold text-center text-zinc-600">
+        Share
       </h3>
 
       <a
