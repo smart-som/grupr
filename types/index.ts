@@ -29,3 +29,11 @@ export interface TsignUserData {
   uid: string;
   res: any;
 }
+
+export interface TdashboardProps {
+  userData: {
+    grups: Array<any>;
+    name: string;
+    email: string;
+  };
+}

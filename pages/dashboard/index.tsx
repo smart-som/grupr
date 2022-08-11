@@ -13,8 +13,11 @@ import { useAuth } from "../../context/AuthContext";
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { firebaseAdmin } from "../../config/firebaseAdmin";
-import { firebaseClient } from "../../config/firebaseClient";
+import { doc, getDoc, query, where } from "firebase/firestore";
+import { db } from "../../config";
 import nookies from "nookies";
+import { TdashboardProps } from "../../types";
+
 function Index({ userData }: any) {
   console.log(userData);
   const [isListLayout, setIsListLayout] = useState(true);
@@ -22,7 +25,7 @@ function Index({ userData }: any) {
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
       <h1 className="text-2xl flex items-center justify-center gap-x-2 md:text-4xl font-bold text-purple-400 text-center">
-        Hello, {userData && userData.name && userData.name.split(" ")[0]}
+        Hello, {userData && userData.name.split(" ")[0]}
         <Image
           src={smiley}
           alt="user emoji"
@@ -93,17 +96,27 @@ export default Index;
 
 export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   try {
+    /****verify auth token and get user id****************************************** */
+    //
     const cookies = nookies.get(ctx);
-
-    // console.log(JSON.stringify(cookies, null, 2))
     const token = await firebaseAdmin.auth().verifyIdToken(cookies.token);
-    const { uid, email } = token;
-    // the user is authenticated!
-    // FETCH STUFF HERE
-    const userData = { uid, email };
-    return {
-      props: { userData },
-    };
+    const { uid } = token;
+    // the  is authenticated!
+
+    /**********FETCH STUFF HERE************************************ */
+    const docRef = doc(db, "userData", uid);
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      const { name, email, grups } = docSnap.data();
+      const userData = { name, email, grups };
+      console.log(userData.name);
+
+      /**********return user data************************************ */
+      return {
+        props: { userData },
+      };
+    }
   } catch (err) {
     // either the `token` cookie didn't exist
     // or token verification failed
