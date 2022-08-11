@@ -7,6 +7,7 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
 } from "firebase/auth";
+import saveNewUser from "../helpers/saveNewUser";
 function SignupForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,30 +17,41 @@ function SignupForm() {
 
   const googleProvider = new GoogleAuthProvider();
 
-  const signUpWithEmailAndPassword = (event: any) => {
+  const signUpWithEmailAndPassword = async (event: any) => {
     event.preventDefault();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
-        router.push("/dashboard");
-        console.log(res);
-      })
-      .catch((err) => {
-        setMessage(err.message.replaceAll("Firebase:", ""));
-      });
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      // console.log({ createUser });
+
+      // store user info to database
+      await saveNewUser({ name, email });
+
+      // console.log(saveUserDataToDb);
+
+      // redirect to dashboard
+      router.push("/dashboard");
+    } catch (err: any) {
+      setMessage(err.message.replaceAll("Firebase:", ""));
+    }
   };
 
-  const signUpWithGoogleProvider = () => {
-    signInWithPopup(auth, googleProvider)
-      .then((res) => {
-        console.log(res);
-        router.push("/dashboard");
-      })
-      .catch((err) => {
-        console.log(err);
-        // setMessage(err.toString())
-      });
+  const signUpWithGoogleProvider = async () => {
+    try {
+      const { user } = await signInWithPopup(auth, googleProvider);
+      // store user info to database
+      await saveNewUser({ name: user.displayName!, email: user.email! });
+
+      // console.log(saveUserDataToDb);
+
+      // redirect to dashboard
+      router.push("/dashboard");
+    } catch (err) {
+      alert(err);
+      // setMessage(err.toString())
+    }
     // catch error
   };
+
   return (
     <section className="max-w-xl mx-auto  px-5 py-7 shadow rounded-md border border-purple-100/20">
       <h1 className="text-3xl font-bold text-purple-400 text-center">

@@ -22,3 +22,8 @@ export interface TsubmitProps extends TgetShortenDataProps {
   excelFile: any;
   e: any;
 }
+
+export interface TsignUserData {
+  email: string;
+  name: string;
+}
