@@ -6,8 +6,6 @@ import crossedFingers from "../images/Crossed-fingers.png";
 // import VictoryHand from "../images/Victory-hand.png";
 import link from "../images/link.png";
 import links from "../images/links.png";
-// import chains from "../images/chains.png";
-// import VulcanSalute from "../images/Vulcan-salute.png";
 import Grupr from "../components/Grupr";
 import frame1 from "../images/frame (1).svg";
 import frame2 from "../images/frame (2).svg";
@@ -17,24 +15,52 @@ import Excel from "../images/Excel.png";
 import groupLinks from "../images/groupLinks.png";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import { FaThList } from "react-icons/fa";
-
+// import logo from "../images/logo.png";
 const Home: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Lets get Grupn</title>
+        <meta
+          name="description"
+          content="Shorten multiple URL's and merge them into a single short link."
+        />
+        <meta
+          name="keywords"
+          content="grupr, compress multiple links, share multiple links,share multiple url,url aggregator,url aggregation"
+        ></meta>
+        <meta property="og:title" content="Lets get Grupn" />
+        <meta
+          property="og:description"
+          content="Shorten multiple URL's and merge them into a single short link."
+        />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content="https://www.grupr.nl" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Grupr.nl" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@grupr.nl" />
+        <meta name="twitter:creator" content="@chinnaji" />
+        <meta name="twitter:title" content="Lets get Grupn" />
+        <meta
+          name="twitter:description"
+          content="Shorten multiple URL's and merge them into a single short link."
+        />
+        <meta name="twitter:image" content="/logo.png" />
+        {/* <meta name="twitter:image:alt" content=Lets get Grupn /> */}
+      </Head>
       <main className=" flex w-full flex-1 flex-col items-center justify-center px-5 text-center max-w-5xl pt-24 mx-auto ">
-        <Head>
-          <title>Create Next App</title>
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
-
         <section className="relative w-full ">
           <h1 className="text-4xl md:text-5xl font-bold text-purple-400 text-center">
             Shorten <span className="text-orange-500">multiple links</span>,
             share as one.
           </h1>
-          <p className="mt-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
-            Reference site about Lorem Ipsum, giving information on its origins,
-            as well as a random Lipsum generator.
+          <p className="mt-6 text-md md:text-xl max-w-2xl mx-auto text-center relative text-zinc-600">
+            Sharing links one by one sucks😒. Grupr helps you share multiple
+            links with one short URL. Create your
+            <span className="text-orange-500"> Grup </span>
+            and share in seconds.
             <div className="w-9 h-9 rotate-90 rounded-full absolute left-0 md:-bottom-32 -bottom-10 ">
               <Image
                 src={link}
