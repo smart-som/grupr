@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import Grupr from "../../components/Grupr";
-
 import Image from "next/image";
 import smiley from "../../images/smiley.png";
 import link from "../../images/link.png";
-import { FaThList } from "react-icons/fa";
-import { BsFillGrid1X2Fill } from "react-icons/bs";
-
-import { useAuth } from "../../context/AuthContext";
+import Link from "next/link";
 import { GetServerSidePropsContext } from "next";
-import { useRouter } from "next/router";
 import { firebaseAdmin } from "../../config/firebaseAdmin";
 import {
   doc,
@@ -67,16 +62,25 @@ function Index({ userData }: TdashboardProps) {
           </h1>
         </div>
 
-        <section className="w-full flex flex-col gap-y-3">
-          {userGrups.map(({ grupId, fullUrl, title, dateCreated }, index) => {
-            return (
-              <DashboardList
-                key={grupId}
-                data={{ grupId, fullUrl, title, dateCreated }}
-              />
-            );
-          })}
-        </section>
+        {userData.userGrups.length > 0 ? (
+          <p className="text-center gap-x-1 text-lg -mt-5 w-full justify-center  flex ">
+            No grups.{"  "}
+            <Link href="/dashboard#grupr">
+              <a className="text-purple-400"> Create Now! </a>
+            </Link>
+          </p>
+        ) : (
+          <section className="w-full flex flex-col gap-y-3">
+            {userGrups.map(({ grupId, fullUrl, title, dateCreated }, index) => {
+              return (
+                <DashboardList
+                  key={grupId}
+                  data={{ grupId, fullUrl, title, dateCreated }}
+                />
+              );
+            })}
+          </section>
+        )}
         {/*  // <div key={index} className="w-full md:w-1/2 p-3 lg:w-1/3">
               //   {isListLayout ? (
               //     <List
