@@ -122,6 +122,7 @@ function Grupr() {
               <input
                 onChange={(e) => setTitle(e.target.value)}
                 type="text"
+                readOnly
                 disabled
                 value={grupUrl}
                 className="px-3 py-4 my-2 outline-none focus:border-1 focus:border-purple-200 rounded-md bg-purple-100 text-purple-300 w-full"
@@ -133,7 +134,7 @@ function Grupr() {
               </div>
               <div className="w-full p-2 md:w-1/2">
                 <a
-                  href=""
+                  href={grupUrl.slice(20, -1)}
                   target="_blank"
                   type="button"
                   className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
