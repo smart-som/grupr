@@ -11,7 +11,7 @@ import testImg1 from "../images/d.png";
 import testImg2 from "../images/d2.png";
 import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
 function Index({ grupData, destinationsMetadata }: any) {
-  // console.log(destinationsMetadata);
+  console.log(destinationsMetadata);
   const [isListLayout, setIsListLayout] = useState(true);
 
   const { destinations, title, grupId, fullUrl } = grupData;
@@ -117,19 +117,23 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
         const preview: any = await getLinkPreview(destination as any, {
           followRedirects: "follow",
         });
+        console.log(preview);
 
         // resturcture link preview data
         const newPreview = {
           url: preview.url,
           title: preview.title || "none",
-          favicon: preview.favicons.filter((favicon: string) =>
-            favicon.includes(".ico")
+          favicon: preview.favicons.filter(
+            (favicon: string) =>
+              favicon.includes(".ico") || favicon.includes(".svg")
           ),
           image: preview.images.filter(
-            (image: string) => image.includes(".png") || image.includes(".jpg")
+            (image: string) =>
+              image.includes(".png") ||
+              image.includes(".jpg") ||
+              image.includes(".svg")
           ),
-          // favicon: preview.favicons.length > 0 ? preview.favicons[0] : "none",
-          // image: preview.images.length > 0 ? preview.images[0] : "none",
+
           description: preview.description || "none",
         };
         destinationsMetadata.push(newPreview);
@@ -137,7 +141,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     );
 
     // console.log(dd);
-    console.log(destinationsMetadata);
+    // console.log(destinationsMetadata);
     return {
       props: { grupData, destinationsMetadata },
     };
