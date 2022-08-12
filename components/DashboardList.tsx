@@ -12,7 +12,7 @@ function DashboardList({ data }: any) {
   }
   return (
     <div className="bg-purple-100 hover:bg-purple-400/10 transition-all ease-in-out duration-200 text-purple-400 flex items-center rounded-md  max-w-3xl w-full mx-auto md:px-5 px-3">
-      <div className="w-7 h-7 rotate-45 mr-3  rounded-full relative ">
+      {/* <div className="w-7 h-7 rotate-45 mr-3  rounded-full relative ">
         <Image
           src={link}
           alt="Chart"
@@ -21,15 +21,20 @@ function DashboardList({ data }: any) {
           priority
           loading="eager"
         />
+      </div> */}
+      <div className="flex flex-col mr-auto overflow-hidden">
+        <h3 className="text-zinc-800 max-w-[70%] truncate">
+          {data.title}dssdsdsdsdsdsdddsdsdsdsdddsdsdsddsdddddddsdsdsdsdkk
+        </h3>
+        <a
+          target="_blank"
+          // href={data.fullUrl}
+          href={"/" + data.grupId}
+          className=" md:text-md font-medium "
+        >
+          grupr.nl/{data.grupId}
+        </a>
       </div>
-      <a
-        target="_blank"
-        // href={data.fullUrl}
-        href={"/" + data.grupId}
-        className="text-zinc-700 md:text-md lg:text-xl"
-      >
-        grupr.nl/{data.grupId}
-      </a>
 
       <div className="ml-auto  flex gap-x-3">
         <CopyToClipboard type={2} text={data.fullUrl} />
