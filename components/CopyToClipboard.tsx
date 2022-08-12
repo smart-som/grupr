@@ -16,6 +16,7 @@ function CopyToClipboard({ text, type }: TcopyToClipboardProps) {
   };
   return type === 1 ? (
     <button
+      title="Copy to clipboard"
       onClick={handleCopy}
       type="button"
       className={`px-2 my-2 py-4 outline-none flex gap-x-3  justify-center items-center duration-200 rounded-md text-zinc-100 ${
@@ -26,6 +27,7 @@ function CopyToClipboard({ text, type }: TcopyToClipboardProps) {
     </button>
   ) : (
     <button
+      title="Copy to clipboard"
       onClick={handleCopy}
       type="button"
       className={`px-2 my-2 py-4 outline-none flex gap-x-2 text-purple-400/80 justify-center items-center duration-200 rounded-md  font-semibold  transition-all ease-in-out   w-full`}

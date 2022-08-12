@@ -22,15 +22,13 @@ function DashboardList({ data }: any) {
           loading="eager"
         />
       </div> */}
-      <div className="flex flex-col mr-auto overflow-hidden">
-        <h3 className="text-zinc-800 max-w-[70%] truncate">
-          {data.title}dssdsdsdsdsdsdddsdsdsdsdddsdsdsddsdddddddsdsdsdsdkk
-        </h3>
+      <div className="flex flex-col mr-auto overflow-hidden max-w-[70%] ">
+        <h3 className="text-zinc-800 w-full truncate">{data.title}</h3>
         <a
           target="_blank"
           // href={data.fullUrl}
           href={"/" + data.grupId}
-          className=" md:text-md font-medium "
+          className=" md:text-md text-sm font-medium "
         >
           grupr.nl/{data.grupId}
         </a>
@@ -39,6 +37,7 @@ function DashboardList({ data }: any) {
       <div className="ml-auto  flex gap-x-3">
         <CopyToClipboard type={2} text={data.fullUrl} />
         <button
+          title={`Delete ${data.title}`}
           onClick={() => handleDelete(data.grupId)}
           type="button"
           className={`ml-auto px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-red-500 font-semibold  transition-all ease-in-out`}
