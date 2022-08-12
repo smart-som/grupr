@@ -11,7 +11,7 @@ import testImg1 from "../images/d.png";
 import testImg2 from "../images/d2.png";
 import { getLinkPreview, getPreviewFromContent } from "link-preview-js";
 function Index({ grupData, destinationsMetadata }: any) {
-  console.log(destinationsMetadata);
+  // console.log(destinationsMetadata);
   const [isListLayout, setIsListLayout] = useState(true);
 
   const { destinations, title, grupId, fullUrl } = grupData;
@@ -117,7 +117,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
         const preview: any = await getLinkPreview(destination as any, {
           followRedirects: "follow",
         });
-        console.log(preview);
+        // console.log(preview);
 
         // resturcture link preview data
         const newPreview = {
