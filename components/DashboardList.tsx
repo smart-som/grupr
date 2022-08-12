@@ -3,10 +3,14 @@ import link from "../images/link.png";
 import Image from "next/image";
 import CopyToClipboard from "./CopyToClipboard";
 import { AiOutlineDelete } from "react-icons/ai";
+import { doc, getDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../config";
 function DashboardList({ data }: any) {
-  function handleDelete(id: string) {
+  async function handleDelete(id: string) {
     const confirm = prompt("Type 'yes' to confirm delete " + data.title);
-    if (confirm === "delete") {
+    if (confirm === "yes") {
+      await deleteDoc(doc(db, "grups", id));
+      alert("Grup deleted");
       // firebaseAdmin.firestore().collection("grups").doc(id).delete();
     }
   }

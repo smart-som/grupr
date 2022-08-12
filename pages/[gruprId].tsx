@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { GetServerSidePropsContext } from "next";
-import { doc, getDoc, collection } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 import { db } from "../config";
 import Grid from "../components/Grid";
 import List from "../components/List";
