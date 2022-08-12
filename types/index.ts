@@ -32,11 +32,23 @@ export interface TsignUserData {
   res: any;
 }
 
+interface Tdestinations {
+  destinations: Array<string>;
+}
+interface TuserGrups {
+  grupId: string;
+  fullUrl: string;
+  title: string;
+  createdBy: string;
+  destinations: Tdestinations;
+  dateCreated: string;
+}
 export interface TdashboardProps {
   userData: {
-    grups: Array<any>;
+    // grups: Array<any>;
     name: string;
     email: string;
+    userGrups: Array<TuserGrups>;
   };
 }
 

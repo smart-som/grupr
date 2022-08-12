@@ -13,7 +13,15 @@ import { useAuth } from "../../context/AuthContext";
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
 import { firebaseAdmin } from "../../config/firebaseAdmin";
-import { doc, getDoc, query, where } from "firebase/firestore";
+import {
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+  collection,
+  DocumentData,
+} from "firebase/firestore";
 import { db } from "../../config";
 import nookies from "nookies";
 import { TdashboardProps } from "../../types";
@@ -21,12 +29,13 @@ import DashboardList from "../../components/DashboardList";
 
 function Index({ userData }: TdashboardProps) {
   // console.log(userData);
+  const { name, userGrups } = userData;
   const [isListLayout, setIsListLayout] = useState(true);
   const items = Array(12).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
       <h1 className="text-2xl flex items-center justify-center gap-x-2 md:text-4xl font-bold text-purple-400 text-center">
-        Hello, {userData && userData.name.split(" ")[0]}
+        Hello, {name.split(" ")[0]}
         <Image
           src={smiley}
           alt="user emoji"
@@ -68,8 +77,13 @@ function Index({ userData }: TdashboardProps) {
         </div>
 
         <section className="w-full flex flex-col gap-y-3">
-          {items.map((item, index) => {
-            return <DashboardList />;
+          {userGrups.map(({ grupId, fullUrl, title, dateCreated }, index) => {
+            return (
+              <DashboardList
+                key={grupId}
+                data={{ grupId, fullUrl, title, dateCreated }}
+              />
+            );
           })}
         </section>
         {/*  // <div key={index} className="w-full md:w-1/2 p-3 lg:w-1/3">
@@ -108,22 +122,28 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
     const docSnap = await getDoc(docRef);
 
     if (docSnap.exists()) {
-      const { name, email, grups } = docSnap.data();
-      const userData = { name, email, grups };
-      // console.log(userData.name);
+      const { name, email } = docSnap.data();
 
+      // console.log(userData.name);
+      // get all grups belonging to user
+      const usersGrupsRef = collection(db, "grups");
+
+      // Create a query against the collection.
+      const usersGrups = query(usersGrupsRef, where("createdBy", "==", uid));
+      const querySnapshot = await getDocs(usersGrups);
+      const userGrups: DocumentData[] = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        userGrups.push(doc.data());
+      });
+      // console.log(userGrups);
+      const userData = { name, email, userGrups };
       /**********return user data************************************ */
       return {
         props: { userData },
       };
     }
   } catch (err) {
-    // either the `token` cookie didn't exist
-    // or token verification failed
-    // either way: redirect to the login page
-    // either the `token` cookie didn't exist
-    // or token verification failed
-    // either way: redirect to the login page
     return {
       redirect: {
         permanent: false,

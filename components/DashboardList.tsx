@@ -3,8 +3,13 @@ import link from "../images/link.png";
 import Image from "next/image";
 import CopyToClipboard from "./CopyToClipboard";
 import { AiOutlineDelete } from "react-icons/ai";
-
-function DashboardList() {
+function DashboardList({ data }: any) {
+  function handleDelete(id: string) {
+    const confirm = prompt("Type 'yes' to confirm delete " + data.title);
+    if (confirm === "delete") {
+      // firebaseAdmin.firestore().collection("grups").doc(id).delete();
+    }
+  }
   return (
     <div className="bg-purple-100 hover:bg-purple-400/10 transition-all ease-in-out duration-200 text-purple-400 flex items-center rounded-md  max-w-3xl w-full mx-auto md:px-5 px-3">
       <div className="w-7 h-7 rotate-45 mr-3  rounded-full relative ">
@@ -17,17 +22,14 @@ function DashboardList() {
           loading="eager"
         />
       </div>
-      <a
-        target="_blank"
-        href="https://grupr.nl/ml30sdk"
-        className="text-zinc-600"
-      >
-        grupr.nl/ml30sdk
+      <a target="_blank" href={data.fullUrl} className="text-zinc-600">
+        grupr.nl/{data.grupId}
       </a>
 
       <div className="ml-auto flex gap-x-3">
-        <CopyToClipboard type={2} text={"https://grupr.nl/ml30sdk"} />
+        <CopyToClipboard type={2} text={data.fullUrl} />
         <button
+          onClick={() => handleDelete(data.grupId)}
           type="button"
           className={`ml-auto px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-purple-300 font-semibold  transition-all ease-in-out`}
         >
