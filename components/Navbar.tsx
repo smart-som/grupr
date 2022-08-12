@@ -108,7 +108,7 @@ function Navbar() {
         {/* open mobile menu button */}
         <CgMenu
           onClick={() => setIsSidebar(true)}
-          className="ml-4 mr-1 lg:hidden cursor-pointer text-3xl"
+          className="ml-4 mr-1 lg:hidden cursor-pointer text-2xl"
         />
       </nav>
     </header>
