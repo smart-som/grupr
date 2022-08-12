@@ -52,7 +52,7 @@ function Index({ grupData, destinationsMetadata }: any) {
       </Head>
       <main className="mb-[200px] mx-auto max-w-6xl px-3 lg:px-5 pt-16 pb-32">
         <div className="flex  flex-col gap-y-6 items-center">
-          <h1 className="text-3xl font-bold mb-5 flex items-center justify-center gap-x-2 text-zinc-700">
+          <h1 className="text-center text-3xl font-bold mb-5 flex items-center justify-center gap-x-2 text-zinc-700">
             {title}
           </h1>
           <div className="flex items-center gap-3  justify-center cursor-pointer w-fit  ">
