@@ -18,7 +18,7 @@ function Navbar() {
     setIsSidebar(false);
   };
   return (
-    <header className="shadow-xs max-h-[105px] border-b border-b-purple-200/5  w-full text-zinc-600 sticky top-0 bg-white/80 backdrop-blur-lg  z-50">
+    <header className="shadow-xs max-h-[105px] border-b border-b-purple-200/5  w-full text-zinc-600 fixed top-0 bg-white/80 backdrop-blur-lg  z-50">
       <nav className=" max-w-6xl mx-auto flex items-center justify-between px-6 md:px-3 ">
         <Link href="/">
           <a className=" w-24 h-16  relative cursor-pointer block">
