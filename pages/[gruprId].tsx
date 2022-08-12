@@ -89,7 +89,7 @@ function Index({ grupData, destinationsMetadata }: any) {
           {destinations.map((destination: string, index: any) => (
             <div
               key={index}
-              className="w-full md:w-1/2  transition-all ease-in-out p-3 lg:w-1/3"
+              className="w-full md:w-1/2  transition-all ease-in-out px-3 md:py-3 py-0 lg:w-1/3"
             >
               {isListLayout ? (
                 <List
@@ -140,7 +140,7 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    console.log("Document data:", docSnap.data());
+    // console.log("Document data:", docSnap.data());
     const grupData = docSnap.data();
     const { destinations } = grupData;
     // get the destinations metadata
