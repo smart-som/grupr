@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import Grupr from "../../components/Grupr";
-import Grid from "../../components/Grid";
-import List from "../../components/List";
+
 import Image from "next/image";
 import smiley from "../../images/smiley.png";
 import link from "../../images/link.png";
 import { FaThList } from "react-icons/fa";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
-import testImg1 from "../../images/d.png";
-import testImg2 from "../../images/d2.png";
+
 import { useAuth } from "../../context/AuthContext";
 import { GetServerSidePropsContext } from "next";
 import { useRouter } from "next/router";
@@ -31,7 +29,6 @@ function Index({ userData }: TdashboardProps) {
   // console.log(userData);
   const { name, userGrups } = userData;
   const [isListLayout, setIsListLayout] = useState(true);
-  const items = Array(12).fill(1);
   return (
     <main className="mx-auto max-w-6xl px-3 lg:px-5 pt-20">
       <h1 className="text-2xl flex items-center justify-center gap-x-2 md:text-4xl font-bold text-purple-400 text-center">
@@ -68,17 +65,6 @@ function Index({ userData }: TdashboardProps) {
               {userGrups.length}
             </span>
           </h1>
-          {/* <div
-            title="Toggle Layout"
-            onClick={() => setIsListLayout(!isListLayout)}
-            className="flex items-center justify-center cursor-pointer hover:bg-purple-500 transition-all ease-in-out bg-purple-400  px-3 py-2 rounded-md"
-          >
-            {isListLayout ? (
-              <BsFillGrid1X2Fill className="text-white text-md" />
-            ) : (
-              <FaThList className="text-white text-md" />
-            )}
-          </div> */}
         </div>
 
         <section className="w-full flex flex-col gap-y-3">
