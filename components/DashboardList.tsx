@@ -24,7 +24,8 @@ function DashboardList({ data }: any) {
       </div>
       <a
         target="_blank"
-        href={data.fullUrl}
+        // href={data.fullUrl}
+        href={"/" + data.grupId}
         className="text-zinc-700 md:text-md lg:text-xl"
       >
         grupr.nl/{data.grupId}
