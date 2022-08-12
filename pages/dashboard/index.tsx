@@ -62,7 +62,12 @@ function Index({ userData }: TdashboardProps) {
       <Grupr />
       <section className="py-32">
         <div className="flex items-center gap-3 mb-10 justify-center">
-          <h1 className="text-3xl font-bold text-purple-400">All Grups</h1>
+          <h1 className="text-3xl font-bold flex items-center justify-center gap-x-2 text-purple-400">
+            All Grups{" "}
+            <span className=" rounded p-1 w-6 h-6 bg-orange-500 flex items-center justify-center text-sm">
+              {userGrups.length}
+            </span>
+          </h1>
           {/* <div
             title="Toggle Layout"
             onClick={() => setIsListLayout(!isListLayout)}
