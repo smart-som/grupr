@@ -89,7 +89,9 @@ function Index({ grupData, destinationsMetadata }: any) {
           {destinations.map((destination: string, index: any) => (
             <div
               key={index}
-              className="w-full md:w-1/2  transition-all ease-in-out px-3 md:py-3 py-0 lg:w-1/3"
+              className={`w-full md:w-1/2  transition-all ease-in-out px-3 ${
+                isListLayout ? " md:py-3 py-0" : "py-5 "
+              }  lg:w-1/3`}
             >
               {isListLayout ? (
                 <List
