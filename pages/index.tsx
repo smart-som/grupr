@@ -152,8 +152,8 @@ const Home: NextPage = () => {
                 <span className="text-orange-500">Infinite possibilities.</span>
               </h2>
               <p className="mt-5 font-light text-center lg:mb-0 mb-10">
-                Reference site about Lorem Ipsum, giving information on its
-                origins, as well as a random Lipsum generator.
+                Get on short shareble link that acts as a gateway to an infinite
+                number of your favourite Url&apos;s.
               </p>
             </div>
             <div className="w-full md:w-1/2 p-5  relative min-h-[450px]">
