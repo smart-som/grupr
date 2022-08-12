@@ -15,28 +15,28 @@ function Share({ url }: { url: string }) {
 
       <a
         target="_blank"
-        href="https://www.facebook.com/sharer/sharer.php?u=https://unclebigbay.hashnode.dev"
+        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
         className="text-3xl mx-2 hover:opacity-80 text-sky-600"
       >
         <BsFacebook />
       </a>
       <a
         target="_blank"
-        href="whatsapp://send?text=Your message here"
+        href={`whatsapp://send?text=${url}`}
         className="text-3xl mx-2 hover:opacity-80 text-green-700"
       >
         <BsWhatsapp />
       </a>
       <a
         target="_blank"
-        href="https://t.me/share/url?url={url}&text={text}"
+        href={`https://t.me/share/url?url=${url}&text={Checkout My Grup🔗}`}
         className="text-3xl mx-2 hover:opacity-80 text-sky-400"
       >
         <BsTelegram />
       </a>
       <a
         target="_blank"
-        href=" https://twitter.com/intent/tweet?text=Hello, World"
+        href={`https://twitter.com/intent/tweet?text=${url}`}
         className="text-3xl mx-2 hover:opacity-80 text-sky-400"
       >
         <BsTwitter />
