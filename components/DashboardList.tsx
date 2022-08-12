@@ -22,16 +22,20 @@ function DashboardList({ data }: any) {
           loading="eager"
         />
       </div>
-      <a target="_blank" href={data.fullUrl} className="text-zinc-600">
+      <a
+        target="_blank"
+        href={data.fullUrl}
+        className="text-zinc-700 md:text-md lg:text-xl"
+      >
         grupr.nl/{data.grupId}
       </a>
 
-      <div className="ml-auto flex gap-x-3">
+      <div className="ml-auto  flex gap-x-3">
         <CopyToClipboard type={2} text={data.fullUrl} />
         <button
           onClick={() => handleDelete(data.grupId)}
           type="button"
-          className={`ml-auto px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-purple-300 font-semibold  transition-all ease-in-out`}
+          className={`ml-auto px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-red-500 font-semibold  transition-all ease-in-out`}
         >
           <AiOutlineDelete className="text-xl" />{" "}
           <span className="md:block hidden text-sm">Delete</span>

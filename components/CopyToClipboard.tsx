@@ -28,7 +28,7 @@ function CopyToClipboard({ text, type }: TcopyToClipboardProps) {
     <button
       onClick={handleCopy}
       type="button"
-      className={`px-2 my-2 py-4 outline-none flex gap-x-2  justify-center items-center duration-200 rounded-md text-purple-300 font-semibold  transition-all ease-in-out   w-full`}
+      className={`px-2 my-2 py-4 outline-none flex gap-x-2 text-purple-400 justify-center items-center duration-200 rounded-md  font-semibold  transition-all ease-in-out   w-full`}
     >
       {isCopied ? (
         <>
