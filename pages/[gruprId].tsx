@@ -1,6 +1,10 @@
 import React, { useState } from "react";
-import { GetServerSidePropsContext } from "next";
-import { doc, getDoc } from "firebase/firestore";
+import {
+  GetServerSidePropsContext,
+  GetStaticPathsContext,
+  GetStaticPropsContext,
+} from "next";
+import { doc, getDoc, getDocs, collection } from "firebase/firestore";
 import { db } from "../config";
 import Grid from "../components/Grid";
 import List from "../components/List";
@@ -124,7 +128,7 @@ function Index({ grupData, destinationsMetadata }: any) {
 
 export default Index;
 
-export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+export async function getStaticProps(ctx: GetStaticPropsContext) {
   if (ctx.params?.gruprId?.length !== 6) {
     return {
       redirect: {
@@ -190,4 +194,17 @@ export async function getServerSideProps(ctx: GetServerSidePropsContext) {
       },
     };
   }
+}
+export async function getStaticPaths(ctx: GetStaticPathsContext) {
+  const grupsIds: any = [];
+  const querySnapshot = await getDocs(collection(db, "grups"));
+  querySnapshot.forEach((doc) => {
+    grupsIds.push(doc.id);
+  });
+  return {
+    paths: grupsIds.map((gruprId: string) => ({
+      params: { gruprId },
+    })),
+    fallback: false,
+  };
 }
