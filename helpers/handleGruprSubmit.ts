@@ -11,9 +11,10 @@ const handleGruprSubmit = (params: TsubmitProps) => {
     title,
     excelFile,
     createdBy,
+    setIsLoading,
   } = params;
   e.preventDefault();
-
+  setIsLoading(true);
   if (isExcel) {
     // console.log(excelFile);
     const fileReader = new FileReader();
@@ -35,6 +36,7 @@ const handleGruprSubmit = (params: TsubmitProps) => {
         setIsModal,
         title,
         createdBy,
+        setIsLoading,
       });
     };
     fileReader.readAsText(excelFile);
@@ -49,6 +51,7 @@ const handleGruprSubmit = (params: TsubmitProps) => {
       title,
       destinations,
       createdBy,
+      setIsLoading,
     });
   }
 };
@@ -58,6 +61,7 @@ function getShortenData({
   setIsModal,
   title,
   createdBy,
+  setIsLoading,
 }: TgetShortenDataProps) {
   // axios post request to server
 
@@ -67,8 +71,11 @@ function getShortenData({
       const { fullUrl } = res.data;
       setGrupUrl(fullUrl);
       setIsModal(true);
+      setIsLoading(false);
     })
     .catch((err) => {
+      setIsLoading(false);
+
       // console.log(err);
     });
 }

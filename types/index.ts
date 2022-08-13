@@ -15,6 +15,7 @@ export interface TgetShortenDataProps {
   setIsModal: (isModal: boolean) => void;
   title: string;
   createdBy: string;
+  setIsLoading: (isLoading: boolean) => void;
 }
 
 export interface TsubmitProps extends TgetShortenDataProps {
