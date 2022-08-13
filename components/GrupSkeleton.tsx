@@ -3,7 +3,7 @@ import React from "react";
 function GrupSkeleton() {
   const list = Array(5).fill(0);
   return (
-    <section className="w-full flex flex-wrap my-10 gap-y-3 mb-[200px] px-3 lg:px-5 pt-16 pb-32">
+    <section className="mx-auto max-w-6xl  w-full flex flex-wrap my-10 gap-y-3 mb-[200px] px-3 lg:px-5 pt-16 pb-32">
       <div className="w-full">
         <h1 className=" mb-5 gap-x-2 bg-zinc-200 rounded-md animate-pulse h-10 w-full max-w-xs mx-auto"></h1>
 
