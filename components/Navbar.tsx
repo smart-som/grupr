@@ -106,10 +106,20 @@ function Navbar() {
           />
         </div>{" "}
         {/* open mobile menu button */}
-        <CgMenu
-          onClick={() => setIsSidebar(true)}
-          className="ml-4 mr-1 lg:hidden cursor-pointer text-2xl"
-        />
+        <div className="ml-auto flex items-center gap-x-2 lg:hidden">
+          <Link href="/signup">
+            <a
+              className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-2  my-6 lg:my-1 font-medium text-sm"
+              onClick={() => setIsSidebar(false)}
+            >
+              Sign Up
+            </a>
+          </Link>{" "}
+          <CgMenu
+            onClick={() => setIsSidebar(true)}
+            className="ml-3 mr-1  cursor-pointer text-3xl"
+          />
+        </div>
       </nav>
     </header>
   );
