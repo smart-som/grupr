@@ -18,9 +18,11 @@ import Head from "next/head";
 function Index({ grupData, destinationsMetadata }: any) {
   // console.log(destinationsMetadata);
   const [isListLayout, setIsListLayout] = useState(true);
-
+  const { isFallback } = useRouter();
   const { destinations, title, grupId, fullUrl } = grupData;
-  return (
+  return isFallback ? (
+    <h1 className="text-7xl m-24">Loading...</h1>
+  ) : (
     <>
       <Head>
         <title>{title}</title>
@@ -206,6 +208,6 @@ export async function getStaticPaths(ctx: GetStaticPathsContext) {
     paths: grupsIds.map((gruprId: string) => ({
       params: { gruprId },
     })),
-    fallback: false,
+    fallback: true,
   };
 }
