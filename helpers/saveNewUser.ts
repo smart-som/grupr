@@ -1,5 +1,5 @@
 import { db } from "../config";
-import { Timestamp, setDoc, doc } from "firebase/firestore";
+import { setDoc, doc } from "firebase/firestore";
 import { TsignUserData } from "../types";
 import { getAdditionalUserInfo } from "firebase/auth";
 
@@ -13,7 +13,7 @@ const saveNewUser = async (userData: TsignUserData) => {
         // userId: userData.uid,
         name: userData.name,
         email: userData.email,
-        created: new Date().toISOString(),
+        created: Date.now(),
       });
     } catch (err) {
       console.log(err);
