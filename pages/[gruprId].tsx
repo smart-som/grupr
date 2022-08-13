@@ -185,6 +185,7 @@ export async function getStaticProps(ctx: GetStaticPropsContext) {
     // console.log(destinationsMetadata);
     return {
       props: { grupData, destinationsMetadata },
+      revalidate: 10,
     };
   } else {
     return {
