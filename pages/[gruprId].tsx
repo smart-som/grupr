@@ -15,6 +15,7 @@ import testImg1 from "../images/d.png";
 import testImg2 from "../images/d2.png";
 import { getLinkPreview } from "link-preview-js";
 import Head from "next/head";
+import GrupSkeleton from "../components/GrupSkeleton";
 function Index({ grupData, destinationsMetadata }: any) {
   const [isListLayout, setIsListLayout] = useState(true);
   const { isFallback } = useRouter();
@@ -22,7 +23,7 @@ function Index({ grupData, destinationsMetadata }: any) {
 
   // const { destinations, title, grupId, fullUrl } = grupData;
   return isFallback ? (
-    <h1 className="text-7xl m-24">Loading...</h1>
+    <GrupSkeleton />
   ) : (
     <>
       <Head>
