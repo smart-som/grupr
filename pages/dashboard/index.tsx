@@ -62,7 +62,7 @@ function Index({ userData }: TdashboardProps) {
           </h1>
         </div>
 
-        {userData.userGrups.length > 0 ? (
+        {userData.userGrups.length < 0 ? (
           <p className="text-center gap-x-1 text-lg -mt-5 w-full justify-center  flex ">
             No grups.{"  "}
             <Link href="/dashboard#grupr">
