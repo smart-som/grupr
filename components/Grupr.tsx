@@ -134,11 +134,21 @@ function Grupr() {
                 <CopyToClipboard type={1} text={grupUrl} />
               </div>
               <div className="w-full p-2 md:w-1/2">
-                <Link href={grupUrl.slice(20, -1)}>
+                {/* <Link href={grupUrl.slice(20, -1)}>
                   <a className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full">
                     <FiExternalLink className="text-xl" /> Preview
-                  </a>
+                  </a> 
                 </Link>
+                  
+                  */}
+                {/* <Link > */}
+                <a
+                  href={grupUrl.slice(20, -1)}
+                  className="px-2  py-4 outline-none  lg:my-2 flex gap-x-3  justify-center items-center rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
+                >
+                  <FiExternalLink className="text-xl" /> Preview
+                </a>
+                {/* </Link> */}
               </div>
               <Share url={grupUrl} />
             </div>
