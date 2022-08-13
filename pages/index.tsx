@@ -4,7 +4,7 @@ import Image from "next/image";
 import Chart from "../images/Chart.png";
 import crossedFingers from "../images/Crossed-fingers.png";
 // import VictoryHand from "../images/Victory-hand.png";
-import link from "../images/link.png";
+import link from "../images/link.svg";
 import links from "../images/links.png";
 import Grupr from "../components/Grupr";
 import frame1 from "../images/frame (1).svg";

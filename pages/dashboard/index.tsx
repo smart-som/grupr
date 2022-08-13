@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Grupr from "../../components/Grupr";
 import Image from "next/image";
 import smiley from "../../images/smiley.png";
-import link from "../../images/link.png";
+import link from "../../images/link.svg";
 import Link from "next/link";
 import { GetServerSidePropsContext } from "next";
 import { firebaseAdmin } from "../../config/firebaseAdmin";

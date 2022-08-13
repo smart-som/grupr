@@ -1,5 +1,5 @@
 import React from "react";
-import link from "../images/link.png";
+import link from "../images/link.svg";
 import Image from "next/image";
 import CopyToClipboard from "./CopyToClipboard";
 import { AiOutlineDelete } from "react-icons/ai";
