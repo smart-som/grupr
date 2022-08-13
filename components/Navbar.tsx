@@ -31,7 +31,7 @@ function Navbar() {
             />
           </a>
         </Link>
-        <ul
+        <div
           className={`flex lg:p-0 p-5 lg:flex-row justify-center lg:-left-[0vw] transition-all ease-linear duration-200 flex-col lg:relative fixed lg:h-fit h-screen lg:bg-transparent bg-white inset-0 ${
             isSidebar ? "-left-[0vw]" : "-left-[100vw] "
           }  lg:w-fit w-full `}
@@ -104,7 +104,7 @@ function Navbar() {
             className="cursor-pointer text-3xl  right-10 top-10 absolute lg:hidden "
             onClick={() => setIsSidebar(false)}
           />
-        </ul>{" "}
+        </div>{" "}
         {/* open mobile menu button */}
         <CgMenu
           onClick={() => setIsSidebar(true)}

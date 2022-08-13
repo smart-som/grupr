@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import { TLayoutProps } from "../types";
 import formatUrl from "../helpers/formatUrl";
 
@@ -11,7 +10,11 @@ function List({ title, url, image }: TLayoutProps) {
     >
       <div className="w-[20%]  relative  h-full rounded-lg overflow-hidden ">
         {/* <Image src={image} layout="fill" objectFit="cover" /> */}
-        <img src={image} className="w-full h-full object-contain" />
+        <img
+          src={image}
+          alt={url + title}
+          className="w-full h-full object-contain"
+        />
       </div>
       <div className="flex flex-col justify-center flex-1 py-3 w-[80%] px-3 gap-y-1">
         <h2 className="w-full truncate font-medium ">{title}</h2>

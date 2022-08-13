@@ -5,7 +5,7 @@ import { GA_TRACKING_ID } from "../helpers/gtag";
 const isProduction = process.env.NODE_ENV === "production";
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         {/* enable analytics script only for production */}
         {isProduction && (
