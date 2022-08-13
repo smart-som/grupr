@@ -610,6 +610,11 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
+"@types/gtag.js@^0.0.10":
+  "integrity" "sha512-98Hy7woUb3jMAMXkZQwfIOYNyfxmI0+U4m0PpCGdnd/FHk0tDpQFCqgXdNkdEoXsKkcGya/2Gew1cAJjKJspVw=="
+  "resolved" "https://registry.npmjs.org/@types/gtag.js/-/gtag.js-0.0.10.tgz"
+  "version" "0.0.10"
+
 "@types/jsonwebtoken@^8.5.8":
   "integrity" "sha512-zm6xBQpFDIDM6o9r6HSgDeIcLy82TKWctCXEPbJJcXb5AKmi5BNNdLXneixK4lplX3PqIVcwLBCGE/kAGnlD4A=="
   "resolved" "https://registry.npmjs.org/@types/jsonwebtoken/-/jsonwebtoken-8.5.8.tgz"
