@@ -16,19 +16,20 @@ import testImg2 from "../images/d2.png";
 import { getLinkPreview } from "link-preview-js";
 import Head from "next/head";
 function Index({ grupData, destinationsMetadata }: any) {
-  // console.log(destinationsMetadata);
   const [isListLayout, setIsListLayout] = useState(true);
   const { isFallback } = useRouter();
-  const { destinations, title, grupId, fullUrl } = grupData;
+  console.log(grupData, isFallback);
+
+  // const { destinations, title, grupId, fullUrl } = grupData;
   return isFallback ? (
     <h1 className="text-7xl m-24">Loading...</h1>
   ) : (
     <>
       <Head>
-        <title>{title}</title>
-        <meta name="description" content={title} />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={title} />
+        <title>{grupData.title}</title>
+        <meta name="description" content={grupData.title} />
+        <meta property="og:title" content={grupData.title} />
+        <meta property="og:description" content={grupData.title} />
         <meta
           property="og:image"
           content={
@@ -37,15 +38,15 @@ function Index({ grupData, destinationsMetadata }: any) {
             testImg1
           }
         />
-        <meta property="og:url" content={fullUrl} />
+        <meta property="og:url" content={grupData.fullUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Grupr.nl" />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@grupr.nl" />
         <meta name="twitter:creator" content="@chinnaji" />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={title} />
+        <meta name="twitter:title" content={grupData.title} />
+        <meta name="twitter:description" content={grupData.title} />
         <meta
           name="twitter:image"
           content={
@@ -54,12 +55,12 @@ function Index({ grupData, destinationsMetadata }: any) {
             testImg1
           }
         />
-        <meta name="twitter:image:alt" content={title} />
+        <meta name="twitter:image:alt" content={grupData.title} />
       </Head>
       <main className="mb-[200px] mx-auto max-w-6xl px-3 lg:px-5 pt-16 pb-32">
         <div className="flex  flex-col gap-y-6 items-center">
           <h1 className="text-center text-3xl font-bold mb-5 flex items-center justify-center gap-x-2 text-zinc-700">
-            {title}
+            {grupData.title}
           </h1>
           <div className="flex items-center gap-3  justify-center cursor-pointer w-fit  ">
             <button
@@ -92,7 +93,7 @@ function Index({ grupData, destinationsMetadata }: any) {
           </div>
         </div>
         <section className="w-full flex flex-wrap my-10 gap-y-3">
-          {destinations.map((destination: string, index: any) => (
+          {grupData.destinations.map((destination: string, index: any) => (
             <div
               key={index}
               className={`w-full md:w-1/2  transition-all ease-in-out px-3 ${
@@ -205,9 +206,7 @@ export async function getStaticPaths(ctx: GetStaticPathsContext) {
     grupsIds.push(doc.id);
   });
   return {
-    paths: grupsIds.map((gruprId: string) => ({
-      params: { gruprId },
-    })),
+    paths: [],
     fallback: true,
   };
 }
