@@ -109,7 +109,7 @@ function Navbar() {
         <div className="ml-auto flex items-center gap-x-2 lg:hidden">
           <Link href="/signup">
             <a
-              className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-2  my-6 lg:my-1 font-medium text-sm"
+              className="hover:bg-purple-500 transition-all ease-in-out bg-purple-400  text-zinc-100 rounded-md flex flex-col items-center  px-4 py-2   font-medium text-sm"
               onClick={() => setIsSidebar(false)}
             >
               Sign Up
