@@ -48,15 +48,15 @@ function Footer() {
             <input
               onChange={(e) => setEmail(e.target.value)}
               type="email"
-              className="md:w-[75%] w-full my-1 bg-transparent  outline-none pl-5 py-4 text-lg"
+              value={email}
+              className="md:w-[75%]  w-full my-1 bg-transparent  outline-none md:pl-1 pl-5 py-4 text-lg"
               placeholder="Email Address"
               required
             />
             {isLoading ? (
               <button
-                title="Creating a Grup"
                 type="button"
-                className="px-2 py-4 outline-none justify-center flex items-center gap-x-1  rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
+                className="px-2 mb-4 md:w-[75%] py-4 outline-none justify-center flex items-center gap-x-1  rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
               >
                 <svg
                   aria-hidden="true"
@@ -79,7 +79,7 @@ function Footer() {
             ) : (
               <button
                 type="submit"
-                className="px-2 py-4 outline-none   rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
+                className="px-2 mb-4  md:w-[75%] py-4 outline-none  max-w-3xl rounded-md text-zinc-100 font-semibold hover:bg-purple-500 transition-all ease-in-out bg-purple-400  w-full"
               >
                 Subscribe
               </button>
