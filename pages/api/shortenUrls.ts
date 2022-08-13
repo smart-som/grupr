@@ -7,7 +7,7 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  console.log(req.body);
+  // console.log(req.body);
   if (req.method == "POST") {
     const characters =
       "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_";
@@ -29,7 +29,7 @@ export default async function handler(
       //  save user info to db and use user id as doc id
       await setDoc(doc(db, "grups", grupId), result);
     } catch (err) {
-      console.log(err);
+      // console.log(err);
     }
 
     // console.log(result);

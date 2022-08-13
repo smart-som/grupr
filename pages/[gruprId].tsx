@@ -19,7 +19,7 @@ import GrupSkeleton from "../components/GrupSkeleton";
 function Index({ grupData, destinationsMetadata }: any) {
   const [isListLayout, setIsListLayout] = useState(true);
   const { isFallback } = useRouter();
-  console.log(grupData, isFallback);
+  // console.log(grupData, isFallback);
 
   // const { destinations, title, grupId, fullUrl } = grupData;
   return isFallback ? (
