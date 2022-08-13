@@ -181,8 +181,8 @@ const Home: NextPage = () => {
                 Multiple preview layouts
               </h2>
               <p className="mt-5 font-light text-center lg:mb-0 mb-10">
-                Reference site about Lorem Ipsum, giving information on its
-                origins, as well as a random Lipsum generator.
+                Toggle between list and grid layout to Preview Your stored
+                links.
               </p>
             </div>
             <div className="w-full md:w-1/2 p-5  relative min-h-[450px]">
@@ -215,8 +215,8 @@ const Home: NextPage = () => {
                 Import CSV support
               </h2>
               <p className="mt-5 font-light text-center lg:mb-0 mb-10">
-                Reference site about Lorem Ipsum, giving information on its
-                origins, as well as a random Lipsum generator.
+                Got a CSV file? no wories! Import your CSV file and get your
+                links ready to share seconds.
               </p>
             </div>
             <div className="w-full md:w-1/2 p-5  relative min-h-[450px]">
@@ -245,8 +245,7 @@ const Home: NextPage = () => {
                 Simple and Short URL
               </h2>
               <p className="mt-5 font-light text-center lg:mb-0 mb-10">
-                Reference site about Lorem Ipsum, giving information on its
-                origins, as well as a random Lipsum generator.
+                Get a beautiful, short and easy to remember link in no time
               </p>
             </div>
             <div className="w-full md:w-1/2 p-5  relative min-h-[450px]">
