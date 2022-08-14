@@ -18,7 +18,7 @@ function List({ title, url, image }: TLayoutProps) {
       </div>
       <div className="flex flex-col justify-center flex-1 py-3 w-[80%] px-3 gap-y-1">
         <h2 className="w-full truncate font-medium ">{title}</h2>
-        <p className="text-light text-sm">{formatUrl(url)}</p>
+        <p className="text-light text-sm text-purple-400">{formatUrl(url)}</p>
       </div>
     </a>
   );
