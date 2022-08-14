@@ -14,23 +14,23 @@ function Signup() {
 
 export default Signup;
 
-export async function getServerSideProps(ctx: GetServerSidePropsContext) {
-  try {
-    const cookies = nookies.get(ctx);
-    const token = await firebaseAdmin.auth().verifyIdToken(cookies.token);
+// export async function getServerSideProps(ctx: GetServerSidePropsContext) {
+//   try {
+//     const cookies = nookies.get(ctx);
+//     const token = await firebaseAdmin.auth().verifyIdToken(cookies.token);
 
-    return {
-      redirect: {
-        permanent: false,
-        destination: "/dashboard",
-      },
-    };
-  } catch (err) {
-    // console.log(err);
-    return {
-      props: {
-        message: "token verification failed",
-      },
-    };
-  }
-}
+//     return {
+//       redirect: {
+//         permanent: false,
+//         destination: "/dashboard",
+//       },
+//     };
+//   } catch (err) {
+//     // console.log(err);
+//     return {
+//       props: {
+//         message: "token verification failed",
+//       },
+//     };
+//   }
+// }
