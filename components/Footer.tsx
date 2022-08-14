@@ -97,10 +97,10 @@ function Footer() {
         <p className="text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
           Made With <BsHeartFill className="text-red-600/70 inline" /> by{" "}
           <a
-            href="https://github.com/chinnaji"
+            href="https://github.com/Smart-som"
             className="text-purple-400 font-semibold"
           >
-            Chinnaji
+            Smart-som
           </a>
         </p>
       </section>

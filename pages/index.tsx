@@ -15,6 +15,7 @@ import Excel from "../images/Excel.png";
 import groupLinks from "../images/groupLinks.png";
 import { BsFillGrid1X2Fill } from "react-icons/bs";
 import { FaThList } from "react-icons/fa";
+import Testimonials from "../components/Testimonials";
 // import logo from "../images/logo.png";
 const Home: NextPage = () => {
   return (
@@ -234,7 +235,7 @@ const Home: NextPage = () => {
 
           {/* frame 4 */}
 
-          <div className="w-full md:flex-row-reverse  flex flex-wrap my-20 py-10">
+          <div className="w-full md:flex-row-reverse  flex flex-wrap my-20 pt-10">
             <div className="w-full md:w-1/2 p-3  flex items-center flex-col justify-center">
               <p className="mb-5">
                 <h2 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-orange-500">
@@ -261,6 +262,7 @@ const Home: NextPage = () => {
             </div>
           </div>
         </section>
+        {/* <Testimonials /> */}
       </main>
 
       {/* soft blur items */}
