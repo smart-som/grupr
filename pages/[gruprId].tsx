@@ -63,7 +63,7 @@ function Index({ grupData, destinationsMetadata }: any) {
           <h1 className="text-center text-3xl font-bold mb-5 flex items-center justify-center gap-x-2 text-zinc-700">
             {grupData.title}
           </h1>
-          <div className="flex items-center gap-3  justify-center cursor-pointer w-fit  ">
+          <div className="flex flex-row-reverse items-center gap-3  justify-center cursor-pointer w-fit  ">
             <button
               title="Show Grid Layout"
               onClick={() => setIsListLayout(false)}

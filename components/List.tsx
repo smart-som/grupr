@@ -8,7 +8,7 @@ function List({ title, url, image }: TLayoutProps) {
       href={url}
       className="flex bg-zinc-100 hover:bg-purple-400/10 transition-all ease-in-out  rounded-lg h-[76px] items-center p-2"
     >
-      <div className="w-[20%]  relative  h-full rounded-lg overflow-hidden ">
+      <div className="w-[20%]  p-2 relative  h-full rounded-lg overflow-hidden ">
         {/* <Image src={image} layout="fill" objectFit="cover" /> */}
         <img
           src={image}

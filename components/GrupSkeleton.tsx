@@ -1,7 +1,7 @@
 import React from "react";
 
 function GrupSkeleton() {
-  const list = Array(5).fill(0);
+  const list = Array(10).fill(0);
   return (
     <section className="mx-auto max-w-6xl  w-full flex flex-wrap my-10 gap-y-3 mb-[200px] px-3 lg:px-5 pt-16 pb-32">
       <div className="w-full">
