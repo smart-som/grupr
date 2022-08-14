@@ -37,7 +37,7 @@ function Footer() {
             Subscribe to our Newsletter
           </h2>
           <p className="mt-6 text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-100">
-            Stay up to date with th elatest features and releases. Get notified
+            Stay up to date with the latest features and releases. Get notified
             by mail whenever we ship something new and fun.
           </p>
 
@@ -93,7 +93,7 @@ function Footer() {
         </section>
       ) : null}
 
-      <section className="py-5 px-3  border-t ">
+      {/* <section className="py-5 px-3  border-t ">
         <p className="text-md md:text-xl max-w-3xl mx-auto text-center relative text-zinc-600">
           Made With <BsHeartFill className="text-red-600/70 inline" /> by{" "}
           <a
@@ -103,7 +103,7 @@ function Footer() {
             Smart-som
           </a>
         </p>
-      </section>
+      </section> */}
     </footer>
   );
 }
